@@ -1,0 +1,1 @@
+Creating a new social media called Pegas in which you can post pictures and opinions, comment, edit and view them, message other people, view other peoples accounts delete comments, edit profile and create new accounts. Like button is needed as well as follow.
