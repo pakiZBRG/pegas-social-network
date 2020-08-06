@@ -63,7 +63,11 @@
 
                             echo "
                                 <div class='cover'>
-                                    <img src='$cover_img' alt='cover-img'>
+                                    <img src='$cover_img' id='myImg' alt='cover-img'>
+                                </div>
+                                <div id='myModal' class='modal'>
+                                    <span class='close'>&times;</span>
+                                    <img class='modal-content' id='imgModal'>
                                 </div>
                                 <div class='profile'>
                                     <img src='$profile_img' alt='profile-img' height='200px' width='200px'>
@@ -146,5 +150,6 @@
                 ?>
             </div>
         </div>
+        <script src='view_img.js'></script>
     </body>
 </html>

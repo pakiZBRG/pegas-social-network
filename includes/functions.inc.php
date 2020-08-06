@@ -182,7 +182,11 @@ function single_post(){
                                             </div>
                                         </div>
                                         <p class='home-card-content'>$content</p>
-                                        <img class='home-card-full' src='./image-post/$img' alt=''>
+                                        <img class='home-card-full' id='myImg' src='./image-post/$img' alt=''>
+                                        <div id='myModal' class='modal'>
+                                            <span class='close'>&times;</span>
+                                            <img class='modal-content' id='imgModal'>
+                                        </div>
                                         <button class='btn btn-warning w-100' style='border-radius: 0px; position: relative;'>Comments<span class='comNum'>$comNum</span></button>
                                     </div>
                                 </div>

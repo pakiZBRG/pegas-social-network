@@ -44,7 +44,6 @@ input[type='file']{
 .profile{
     width: 250px;
     height: 100px;
-    
 
     & img{
         width: 200px;
@@ -52,7 +51,6 @@ input[type='file']{
         object-fit: cover;
         position: relative;
         top: -100px;
-        z-index: 10;
         left: 20px;
         border-radius: 50%;
         border: 2px solid #ebebeb;

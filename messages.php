@@ -149,11 +149,11 @@
                     $run = mysqli_query($conn, $sql);
                     while($row = mysqli_fetch_array($run)){
                         $user_id = $row["id"];
-                        $userId = $_SESSION['userId'];
                         $user_name = $row['username'];
                         $first_name = $row['first_name'];
                         $last_name = $row['last_name'];
                         $profile_img = $row['profile_image'];
+                        $userId = $_SESSION['userId'];
 
                         $sql_u = "SELECT COUNT(*) AS SUM FROM messages WHERE msg_seen='no' AND user_from='$user_id' AND user_to='$userId' ORDER BY msg_seen DESC";
                         $run_u = mysqli_query($conn, $sql_u);

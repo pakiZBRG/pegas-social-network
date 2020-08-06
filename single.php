@@ -24,7 +24,7 @@
         <link rel='stylesheet' href='style/style.css'>
         <title>Pegas | View Post</title>
     </head>
-
+    
     <body>
         <div class="row">
             <div class="col-sm-12">
@@ -36,5 +36,6 @@
                 window.history.replaceState(null, null, window.location.href);
             }
         </script>
+        <script src='view_img.js'></script>
     </body>
 </html>

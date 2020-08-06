@@ -536,7 +536,6 @@ input[type='file'] {
      object-fit: cover;
   position: relative;
   top: -100px;
-  z-index: 10;
   left: 20px;
   border-radius: 50%;
   border: 2px solid #ebebeb;
@@ -1050,5 +1049,60 @@ input[type='file'] {
 
 .edit-table-describe {
   width: 90%;
+}
+
+#myImg {
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#myImg:hover {
+  opacity: 0.85;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 65%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.close {
+  position: fixed;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .modal-content {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

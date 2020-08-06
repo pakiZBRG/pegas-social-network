@@ -34,7 +34,7 @@
                 ?>
                 <li><a href='profile.php?<?php echo "u_id=$user_id" ?><?php echo "&username=$user_name"; ?>' title='View profile'><?php echo "$user_name"; ?></a></li>
                 <li><a href='home.php' title='View Feed'>Home</a></li>
-                <li><a href='members.php'>Connect</a></li>
+                <li><a href='members.php?<?php echo "u_id=$user_id"; ?>'>Connect</a></li>
                 <li><a href='messages.php?<?php echo "u_id=$user_id"; ?>&username='>Messages</a></li>
                 <?php 
                     echo "
