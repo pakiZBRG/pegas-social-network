@@ -1,0 +1,133 @@
+.width-90{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.messages{
+    color: #333;
+
+    &:hover{color: crimson;}
+
+    &-heads{
+        display: flex;
+        flex-direction: row;
+        align-items:  center;
+        margin-top: 0.7rem;
+        padding: 0.5rem 0 0.5rem 1rem;
+        border-radius: 20px;
+        transition: 400ms;
+        position: relative;
+
+        & img{
+            border-radius: 50%;
+            transition: 200ms;
+            width: 70px;
+        }
+
+        &-name{
+            padding-left: 1rem;
+            font-size: 1.05rem;
+        }
+        &:hover{
+            background: #dfdfdf;
+
+            & img{
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+
+        a{
+            color: crimson;
+        }
+
+        & img{
+            border-radius: 50%;
+        }
+
+        &-name{
+            font-size: 1.6rem;
+            padding-top: 0.6rem;
+        }
+
+        &-username{
+            color: gray;
+            font-weight: bold;
+        }
+    }
+
+    &-msg{
+        height: 450px;
+        overflow-y: auto;
+        padding: 1rem;
+        background: rgb(209, 209, 209);
+        border-radius: 20px;
+
+        &-reciever{
+            background: gray;
+            color: #fff;
+            padding: 5px 15px 2px 15px;
+            border-radius: 18px;
+            font-size: 1.25rem;
+            margin: 5px;
+            float: left;
+            clear: both;
+        }
+
+        &-sender{
+            background: crimson;
+            color: #fff;
+            padding: 5px 15px 2px 15px;
+            border-radius: 18px;
+            margin: 5px;
+            font-size: 1.25rem;
+            float: right;
+            clear: both;
+        }
+    }
+
+    &-users{
+        height: 450px !important;
+        overflow-y: auto !important;
+    }
+
+    &-form{
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: center;
+
+        & input[type="text"]{
+            width: 80%;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid gray;
+            font-size: 1.3rem;
+        }
+
+        & input[type="submit"]{
+            margin: 0 1rem;
+        }
+    }
+}
+
+#red{
+    background: rgba(220, 20, 60, .2);
+}
+
+.new {
+    background: crimson;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+}

@@ -39,6 +39,9 @@
                             else if($_GET["error"] === "username_taken"){
                                 echo "<p class='signup-errmsg'>Username is taken!</p>";
                             }
+                            else if($_GET["error"] === "email_taken"){
+                                echo "<p class='signup-errmsg'>Email is taken!</p>";
+                            }
                             else if($_GET["error"] === "sql_error"){
                                 echo "<p class='signup-errmsg'>Error occured. Try again!</p>";
                             }

@@ -38,6 +38,13 @@
                         }
                     }
                 ?>
+                <?php
+                    if(isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == 'pass_updated'){
+                            echo "<p style='color: teal; font-size: 1.1rem; text-align: center'>Your password has been reseted!</p>";
+                        }
+                    }
+                ?>
                 <form action='login.php' method="POST" class='main-form'>
                     <input type='text' name='mailuid' placeholder="Username or E-mail" required>
                     <input type='password' name='pwd' placeholder="Password" required>
@@ -47,6 +54,5 @@
                 </form>
             </div>
         </div>
-
     </body>
 </html>

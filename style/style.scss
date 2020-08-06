@@ -5,14 +5,25 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Josefin Sans' !important;
-    background: #eeeeee;
+    background: #eeeeee !important;
     overflow-x: hidden;
 }
 
 p, ul, form{margin: 0 !important;}
+
+.error{
+    color: crimson;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
 
 @import './components/main';
 @import './components/signup';
 @import './components/nav';
 @import './components/home';
 @import './components/profile';
+@import './components/edit';
+@import './components/single';
+@import './components/connect';
+@import './components/messages';
+@import './components/edit_acc';

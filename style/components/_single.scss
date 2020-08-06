@@ -1,0 +1,108 @@
+.width{
+    &-60{
+    width: 60%;
+    margin: 0 auto;
+        @media(max-width: 800px){
+            width: 100%;
+        }
+    }
+
+    &-50{
+        width: 50%;
+        margin: 0 auto;
+        @media(max-width: 800px){
+            width: 100%;
+            padding: 0 1rem;
+        }
+    } 
+}
+
+.home-card-full{
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.comment{
+    background: rgb(219, 219, 219);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &-delete{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.3rem;
+    }
+
+    &-info{
+        display: flex;
+        align-items: center;
+
+        & h5{
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+
+            & a{
+                color: crimson;
+            }
+
+            & small{
+                font-size: 0.9rem;
+                color: gray;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-profile{
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &-content{
+        padding: 0rem 1.3rem 0.5rem 4rem;
+        font-size: 1.1rem;
+        font-family: sans-serif;
+    }
+
+    &-form{
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+
+        & input[type='text']{
+            border: none;
+            border-bottom: 3px solid gray;
+            background: transparent;
+            width: 80%;
+            transition: 500ms;
+            font-size: 1.4rem;
+
+            &:focus{
+                border-color: crimson;
+            }
+        }
+    }
+
+    &-input{
+        position: absolute;
+        top:0;
+        left:50%;
+        transform: translate(-50%, 0);
+        font-size: 1.3rem;
+        color: #fff;
+        background: crimson;
+    }
+}
+
+.comNum {
+    background: crimson;
+    color: #fff;
+    padding: 3px 4px 0 4px;
+    border-radius: 10px;
+}

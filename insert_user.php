@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_POST["signup"])){
     require "includes/database.inc.php";
 
@@ -40,8 +39,17 @@ if(isset($_POST["signup"])){
         exit();
     }
 
+    //if the email is taken
+    $sqlUsername = "SELECT email FROM users WHERE email='$email';";
+    $run_sql = mysqli_query($conn, $sqlUsername);
+    $result = mysqli_num_rows($run_sql);
+    if($result > 0){
+        header("Location: signup.php?error=email_taken");
+        exit();
+    }
+
     $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (first_name,last_name, username, email, password, describe_user, profile_image, cover_image, register_date, status, posts, recovery_account) VALUES('$first_name', '$last_name', '$username', '$email', '$hashPwd', '', '$profilePic', '$coverPic', NOW(), '$status' ,'$posts' ,'pakiZBRG')";
+    $sql = "INSERT INTO users (first_name,last_name, username, email, password, describe_user, profile_image, cover_image, register_date, status, posts) VALUES('$first_name', '$last_name', '$username', '$email', '$hashPwd', '', '$profilePic', '$coverPic', NOW(), '$status' ,'$posts')";
     $query = mysqli_query($conn, $sql);
 
     if($query){

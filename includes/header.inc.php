@@ -1,6 +1,6 @@
 <?php
     include "database.inc.php";
-    include './functions/functions.php';
+    include 'functions.inc.php';
 ?>
 
 <nav class='nav'>
@@ -27,16 +27,15 @@
                     $profile_image = $row["profile_image"];
                     $cover_image = $row["cover_image"];
                     $register_date = $row["register_date"];
-                    $recovery_account = $row["recovery_account"];
 
                     $user_sql = "SELECT * FROM posts WHERE user_id='$user_id';";
                     $run_posts = mysqli_query($conn, $user_sql);
                     $posts = mysqli_num_rows($run_posts);
                 ?>
-                <li><a href='profile.php?<?php echo "u_id=$user_id" ?><?php echo "&username=$user_name"; ?>'><?php echo "$user_name"; ?></a></li>
-                <li><a href='home.php'>Home</a></li>
-                <li><a href='home.php'>Connect</a></li>
-                <li><a href='messages.php?u_id=new'>Messages</a></li>
+                <li><a href='profile.php?<?php echo "u_id=$user_id" ?><?php echo "&username=$user_name"; ?>' title='View profile'><?php echo "$user_name"; ?></a></li>
+                <li><a href='home.php' title='View Feed'>Home</a></li>
+                <li><a href='members.php'>Connect</a></li>
+                <li><a href='messages.php?<?php echo "u_id=$user_id"; ?>&username='>Messages</a></li>
                 <?php 
                     echo "
                         <li class='dropdown'>
@@ -60,8 +59,8 @@
         </div>
         <div class='nav-search'>
             <form action='results.php' class='nav-search-form' method='GET'>
-                <input type='text' name='user_search' placeholder='Search...'>
-                <button type='submit' class='nav-search-btn' name='search'><i class="fa fa-search"></i></button>
+                <input type='text' name='user_search' placeholder='Search posts'>
+                <button type='submit' class='nav-search-btn' name='search' title='Search'><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
