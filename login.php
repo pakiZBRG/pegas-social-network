@@ -24,6 +24,9 @@ if(isset($_POST["login"])){
             }
             else if($pwdCheck === true){
                 session_start();
+                // if(isset($_SESSION['userId'])){
+                //     header("Location: home.php");
+                // }
                 $_SESSION["userId"] = $row["id"];
                 $_SESSION["userName"] = $row["username"];
                 header("Location: home.php");

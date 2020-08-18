@@ -25,7 +25,7 @@
     </head>
 
     <body>
-        <div class="row width-80">
+        <div class="row width-80 pb-4">
             <div class="col-sm-12">
                 <h2 class='text-center p-4'>Connect with people, or bots</h2>
                 <form class='connect-form' action=''>

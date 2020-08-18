@@ -24,6 +24,13 @@
     display: block;
     width: 65%;
     object-fit: cover;
+    animation-name: zoom; 
+    animation-duration: 700ms;
+}
+
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
 }
 
 .close {

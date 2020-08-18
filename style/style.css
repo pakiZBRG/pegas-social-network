@@ -1081,6 +1081,32 @@ input[type='file'] {
   width: 65%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-animation-name: zoom;
+          animation-name: zoom;
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .close {
