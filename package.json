@@ -1,0 +1,20 @@
+{
+  "name": "Pegas_Network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "view_img.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakiZBRG/pegas-social-network.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pakiZBRG/pegas-social-network/issues"
+  },
+  "homepage": "https://github.com/pakiZBRG/pegas-social-network#readme"
+}
