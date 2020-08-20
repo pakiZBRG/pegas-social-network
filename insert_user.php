@@ -3,12 +3,12 @@
 if(isset($_POST["signup"])){
     require "includes/database.inc.php";
 
-    $first_name = $_POST["first_name"];
-    $last_name = $_POST["last_name"];
-    $email = $_POST["email"];
-    $username = $_POST["username"];
-    $pwd = $_POST["pwd"];
-    $pwdRepeat = $_POST["pwd-repeat"];
+    $first_name = mysqli_real_escape_string($conn, $_POST["first_name"]);
+    $last_name = mysqli_real_escape_string($conn, $_POST["last_name"]);
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $username = mysqli_real_escape_string($conn, $_POST["username"]);
+    $pwd = mysqli_real_escape_string($conn, $_POST["pwd"]);
+    $pwdRepeat = mysqli_real_escape_string($conn, $_POST["pwd-repeat"]);
     $status = "verified";
     $posts = "no";
     $profilePic = 'users/user.jpg';
