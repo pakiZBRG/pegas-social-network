@@ -139,7 +139,7 @@
                                     </div>
                                 </div>
                                 <p class='home-card-content'>$content</p>
-                                <img class='home-card-img' src='./image-post/$upload_img' alt=''>
+                                ".($upload_img ? "<img class='home-card-img' src='./image-post/$upload_img' alt=''>" : null)."
                                 <a href='single.php?post_id=$post_id&username=$user_name' title='View comments'>
                                     <button class='btn btn-warning w-100' style='border-radius: 0px;'>Comment<span class='comNum'>$comNum</span></button>
                                 </a>
