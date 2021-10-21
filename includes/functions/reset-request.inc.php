@@ -7,9 +7,14 @@
     use PHPMailer\PHPMailer\Exception;
     require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\vendor\autoload.php";
 
-    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();
-    $user_email = $_ENV["USER_EMAIL"];
-    $user_pass = $_ENV["USER_PASS"];
+    if (file_exists(__DIR__ . '/.env')) { 
+        $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();
+        $user_email = $_ENV["USER_EMAIL"];
+        $user_pass = $_ENV["USER_PASS"];
+    } else {
+        $user_email = getenv("USER_EMAIL");
+        $user_pass = getenv("USER_PASS");
+    }
 
     if(isset($_GET['forgotPassword'])){
         require "../db.inc.php";
