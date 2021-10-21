@@ -109,11 +109,11 @@
             <?php
                 echo "
                     <div class='cover'>
-                        <img id='cover' src='/pegas/$cover_image' alt='cover-img'>
+                        <img id='cover' src='/$cover_image' alt='cover-img'>
                         $changeCover
                     </div>
                     <div class='profile'>
-                        <img id='profile' src='/pegas/$profile_image' alt='profile-img' height='200px' width='200px'>
+                        <img id='profile' src='/$profile_image' alt='profile-img' height='200px' width='200px'>
                         $changeProfile
                     </div>
                 ";

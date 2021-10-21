@@ -9,7 +9,7 @@ function insertUser() {
 
     $.ajax({
         method: "GET",
-        url: "./includes/functions/insert_user.inc.php",
+        url: "/includes/functions/insert_user.inc.php",
         data: {
             fname,
             lname,
@@ -38,7 +38,7 @@ function logIn() {
 
     $.ajax({
         method: "GET",
-        url: "./includes/functions/login.inc.php",
+        url: "/includes/functions/login.inc.php",
         data: {
             mailuid,
             pwd,
@@ -48,7 +48,7 @@ function logIn() {
             if(data.length < 200) {
                 $('#message').html(data);
             } else {
-                window.location.replace('/pegas/home')
+                window.location.replace('/home')
             } 
         }, 
         error: (xhr, status, error) => {
@@ -63,7 +63,7 @@ function forgotPassword() {
 
     $.ajax({
         method: "GET",
-        url: "/pegas/includes/functions/reset-request.inc.php",
+        url: "/includes/functions/reset-request.inc.php",
         data: {
             email,
             forgotPassword,
@@ -86,7 +86,7 @@ function resetPassword() {
 
     $.ajax({
         method: "GET",
-        url: "/pegas/includes/functions/reset-password.inc.php",
+        url: "/includes/functions/reset-password.inc.php",
         data: {
             selector,
             validator,
@@ -110,7 +110,7 @@ function getPosts(limit, start) {
 
     $.ajax({
         method: "GET",
-        url: "/pegas/includes/functions/get_posts.inc.php",
+        url: "/includes/functions/get_posts.inc.php",
         data: {
             userId, 
             limit,
@@ -142,7 +142,7 @@ function getPostsAfterPostCreation(limit, start) {
 
     $.ajax({
         method: "GET",
-        url: "/pegas/includes/functions/get_posts.inc.php",
+        url: "/includes/functions/get_posts.inc.php",
         data: {
             userId,
             limit,
@@ -160,7 +160,7 @@ function getPostsAfterPostCreation(limit, start) {
 function getUserPosts(userEmail, userId) {
     $.ajax({
         method: "GET",
-        url: "/pegas/includes/functions/single_post.inc.php",
+        url: "/includes/functions/single_post.inc.php",
         data: {
             userEmail,
             userId
@@ -179,7 +179,7 @@ function loadComments() {
     var username = $("#username").val();
     
     $.ajax({
-        url: "/pegas/includes/functions/comments.inc.php",
+        url: "/includes/functions/comments.inc.php",
         type: "GET",
         data: {
             post_id,
@@ -196,7 +196,7 @@ function loadComments() {
 
 function commentNum(postId) {
     $.ajax({
-        url: "/pegas/includes/functions/comment_num.inc.php",
+        url: "/includes/functions/comment_num.inc.php",
         type: "GET",
         data: {
             postId
@@ -214,7 +214,7 @@ function searchUser(){
     var search = $("#search_user").val().trim();
 
     $.ajax({
-        url: "/pegas/includes/functions/search_user.inc.php",
+        url: "/includes/functions/search_user.inc.php",
         type: "GET",
         data: {
             search
@@ -234,7 +234,7 @@ function deleteComment(el) {
     username = $('#username').val();
 
     $.ajax({
-        url: "/pegas/includes/functions/delete_comment.inc.php",
+        url: "/includes/functions/delete_comment.inc.php",
         type: "GET",
         data: {
             comId,
@@ -255,7 +255,7 @@ function likePost(el){
     postId = el;
 
     $.ajax({
-        url: "/pegas/includes/functions/like_post.inc.php",
+        url: "/includes/functions/like_post.inc.php",
         type: "GET",
         data: {
             postId,
@@ -276,7 +276,7 @@ function dislikePost(el){
     console.log(postId, userId);
 
     $.ajax({
-        url: "/pegas/includes/functions/dislike_post.inc.php",
+        url: "/includes/functions/dislike_post.inc.php",
         type: "GET",
         data: {
             postId,
@@ -299,7 +299,7 @@ function updateProfile() {
     var describeUser = $("#bio").val();
 
     $.ajax({
-        url: "/pegas/includes/functions/update_profile.inc.php",
+        url: "/includes/functions/update_profile.inc.php",
         type: "POST",
         data: {
             userId,
@@ -311,7 +311,7 @@ function updateProfile() {
         success: function(data) {
             $("#message").html(data.split('</p>')[0]);
             $("#navName").text(data.split('</p>')[1]);
-            $('#navName').attr('href', `/pegas/profile/${data.split('</p>')[1]}`)
+            $('#navName').attr('href', `/profile/${data.split('</p>')[1]}`)
         },
         error: function(e) {
             console.log(e)
@@ -324,7 +324,7 @@ function follow() {
     var followed = $('#followed').val();
 
     $.ajax({
-        url: "/pegas/includes/functions/follow.inc.php",
+        url: "/includes/functions/follow.inc.php",
         type: "POST",
         data: {
             follower,
@@ -344,7 +344,7 @@ function unfollow() {
     var followed = $('#followed').val();
 
     $.ajax({
-        url: "/pegas/includes/functions/unfollow.inc.php",
+        url: "/includes/functions/unfollow.inc.php",
         type: "POST",
         data: {
             follower,
@@ -361,7 +361,7 @@ function unfollow() {
 
 function editMode(el) {
     $.ajax({
-        url: "/pegas/includes/edit_post.php",
+        url: "/edit_post.php",
         type: "GET",
         data: {
             postId: el,
@@ -377,7 +377,7 @@ function editMode(el) {
 
 function deletePost(postId, userEmail, userId) {
     $.ajax({
-        url: "/pegas/includes/functions/delete_post.inc.php",
+        url: "/includes/functions/delete_post.inc.php",
         type: "GET",
         data: {
             postId
@@ -395,7 +395,7 @@ function searchPost(userId) {
     var search = $('#searchPost').val();
 
     $.ajax({
-        url: "/pegas/includes/functions/single_post.inc.php",
+        url: "/includes/functions/single_post.inc.php",
         type: "GET",
         data: {
             search,
@@ -412,7 +412,7 @@ function searchPost(userId) {
 
 function loadMessagesAndUser(userId, loggedUser) {
     $.ajax({
-        url: "/pegas/includes/functions/messages.inc.php",
+        url: "/includes/functions/messages.inc.php",
         type: "GET",
         data: {
             userId,
@@ -432,7 +432,7 @@ function sendMessage(reciever, sender) {
     var msg = $('#msg').val();
 
     $.ajax({
-        url: "/pegas/includes/functions/send_message.inc.php",
+        url: "/includes/functions/send_message.inc.php",
         type: "POST",
         data: {
             reciever,
@@ -452,13 +452,13 @@ function sendMessage(reciever, sender) {
 
 function deleteUser(userId) {
     $.ajax({
-        url: "/pegas/includes/functions/delete_user.inc.php",
+        url: "/includes/functions/delete_user.inc.php",
         type: "POST",
         data: {
             userId
         },
         success: function() {
-            window.location.replace('/pegas')
+            window.location.replace('/')
         },
         error: function(e) {
             console.log(e)
@@ -468,7 +468,7 @@ function deleteUser(userId) {
 
 function displayTooltip(userId, postId) {
     $.ajax({
-        url: "/pegas/includes/tooltip.php",
+        url: "/includes/tooltip.php",
         type: "GET",
         data: {
             userId
@@ -491,7 +491,7 @@ $(document).ready(function () {
     $("#postForm").on('submit',function(e) {
         e.preventDefault();
         $.ajax({
-            url: "/pegas/includes/functions/create_post.inc.php",
+            url: "/includes/functions/create_post.inc.php",
             type: "POST",
             data: new FormData(this),
             contentType: false,
@@ -512,7 +512,7 @@ $(document).ready(function () {
 
     $("#coverForm").on('change', function(){
         $.ajax({
-            url: "/pegas/includes/functions/update_coverImage.inc.php",
+            url: "/includes/functions/update_coverImage.inc.php",
             type: "POST",
             data: new FormData(this),
             contentType: false,
@@ -532,7 +532,7 @@ $(document).ready(function () {
 
     $("#profileForm").on('change', function(){
         $.ajax({
-            url: "/pegas/includes/functions/update_profileImage.inc.php",
+            url: "/includes/functions/update_profileImage.inc.php",
             type: "POST",
             data: new FormData(this),
             contentType: false,
@@ -553,7 +553,7 @@ $(document).ready(function () {
     $("#updatePost").on('submit',function(e) {
         e.preventDefault();
         $.ajax({
-            url: "/pegas/includes/functions/update_post.inc.php",
+            url: "/includes/functions/update_post.inc.php",
             type: "POST",
             data: new FormData(this),
             contentType: false,
@@ -579,7 +579,7 @@ $(document).ready(function () {
             $("#message").html("<p class='msg warning'><i class='fa fa-exclamation-triangle'></i> Insert comment</p>");
         } else {
             $.ajax({
-                url: "/pegas/includes/functions/create_comment.inc.php",
+                url: "/includes/functions/create_comment.inc.php",
                 type: "POST",
                 data: {
                     comment,

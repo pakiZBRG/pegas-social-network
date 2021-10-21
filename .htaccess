@@ -9,4 +9,4 @@ RewriteRule ^messages/([^/]+)$ messages.php?username=$1 [NC,L]
 RewriteRule ^edit/([^/]+)$ edit_profile.php?username=$1 [NC,L]
 RewriteRule ^profile/([^/]+)/([^/]+)/edit$ edit_post.php?username=$1&post_id=$2&status=edit [NC,L]
 
-ErrorDocument 404 /pegas/404.php
+ErrorDocument 404 /404.php

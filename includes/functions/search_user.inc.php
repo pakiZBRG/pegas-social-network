@@ -1,7 +1,7 @@
 <?php 
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\db.inc.php";
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\\helpers\Messages.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\\helpers\Messages.php";
 
     if(sizeof($_GET) == 0) {
         $sql = "SELECT * FROM users";
@@ -29,11 +29,11 @@
             <div class='row width-80'>
                 <div class='col-sm-12 connect-card'>
                     <div class='connect-card-row'>
-                        <a href='/pegas/profile/$username'>
+                        <a href='/profile/$username'>
                             <img src='$img' alt='profile' title='$username'>
                         </a>
                         <div class='connect-card-col'>
-                            <h5><a href='/pegas/profile/$username'>$username</a></h5>
+                            <h5><a href='/profile/$username'>$username</a></h5>
                             <h6>$first_name $last_name</h6>
                         </div>
                         <p>Followers <span>$followers</span></p>

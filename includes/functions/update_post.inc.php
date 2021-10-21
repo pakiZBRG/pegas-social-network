@@ -45,14 +45,14 @@
                         $img_result = mysqli_query($conn, $query);
                         if($row = mysqli_fetch_assoc($img_result)) {
                             $filename = $row["upload_image"];
-                            $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                            $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                             if (file_exists($deleteimg)) {
                                 unlink($deleteimg);
                             }
                         }
 
                         $fileNewName = 'assets/'.$name."-".time().".".$fileAcutalExt;
-                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$fileNewName";
+                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$fileNewName";
                         move_uploaded_file($fileTmpName, $fileDestination);
                         $update = "UPDATE posts SET upload_image=? WHERE id=?;";
                         $stmt = mysqli_prepare($conn, $update);
@@ -94,14 +94,14 @@
                         $img_result = mysqli_query($conn, $query);
                         if($row = mysqli_fetch_assoc($img_result)) {
                             $filename = $row["upload_image"];
-                            $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                            $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                             if (file_exists($deleteimg)) {
                                 unlink($deleteimg);
                             }
                         }
 
                         $fileNewName = 'assets/'.$name."-".time().".".$fileAcutalExt;
-                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$fileNewName";
+                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$fileNewName";
                         move_uploaded_file($fileTmpName, $fileDestination);
                         $update = "UPDATE posts SET upload_image=?, post_content=? WHERE id=?;";
                         $stmt = mysqli_prepare($conn, $update);

@@ -1,10 +1,10 @@
 <?php
 
-    require($_SERVER['DOCUMENT_ROOT'] . '/pegas/vendor/autoload.php');    
-    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]).'/pegas')->load();
+    require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');    
+    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();
     $API_KEY = $_ENV["GOOGLE_API_KEY"];
     $API_SECRET = $_ENV["GOOGLE_API_SECRET"];
-    $redirectUrl = "http://localhost/pegas/home";
+    $redirectUrl = "https://pegas.herokuapp.com/home";
 
     $client = new Google\Client();
 

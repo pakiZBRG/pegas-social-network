@@ -32,7 +32,7 @@
                     <div id='length'></div>
                 </div>
                 <div class="home-card-img">
-                    <?php echo ($imageUrl ? "<img class='home-card-img' name='image' id='showImg' src='/pegas/$imageUrl'>" : null) ?>
+                    <?php echo ($imageUrl ? "<img class='home-card-img' name='image' id='showImg' src='/$imageUrl'>" : null) ?>
                     <label class='chooseImgBtn' title='Choose an image'>
                         <i class="fa fa-folder-open" style='padding: 0.3rem'></i>
                         <input type='file' name='image' onchange="loadFile(event)">
@@ -45,7 +45,7 @@
                             <i class='fa fa-check'></i>
                         </button>
                     </span>
-                    <span class='card m-1' href='/pegas/profile/<?php echo $user_name; ?>'>
+                    <span class='card m-1' href='/profile/<?php echo $user_name; ?>'>
                         <button class='card-btn decline'>
                             <i class='fa fa-times'></i>
                         </button>

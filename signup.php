@@ -28,7 +28,7 @@
                     <p>Minimum 8 characters.</p>
                     <input type="password" id='pwd_repeat' placeholder="Repeat Password">
                     <button onclick="insertUser(); return false;" class='signup-form-btn' name='signup'>Signup</button>
-                    <a class='signup-form-login' href='/pegas'>Already have an account?</a>
+                    <a class='signup-form-login' href='/'>Already have an account?</a>
                 </form>
             </div>
         </div>

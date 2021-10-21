@@ -27,7 +27,7 @@
 
                         echo "
                             <div class='follower-card' onclick='loadMessagesAndUser($user_id, $loggedUser);'>
-                                <img src='/pegas/$profile_img' alt='$first_name $last_name'>
+                                <img src='/$profile_img' alt='$first_name $last_name'>
                                 <p>$first_name $last_name</p>
                             </div>
                         ";

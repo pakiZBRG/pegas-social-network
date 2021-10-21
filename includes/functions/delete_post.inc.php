@@ -11,7 +11,7 @@
         if($row = mysqli_fetch_assoc($img_result)) {
             $filename = $row["upload_image"];
             if($filename) {
-                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                 if (file_exists($deleteimg)) {
                     unlink($deleteimg);
                 }

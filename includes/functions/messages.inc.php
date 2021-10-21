@@ -24,8 +24,8 @@
             
             echo "
                 <div class='follower-info'>
-                    <img src='/pegas/$profileImg' alt='$first_name $last_name'>
-                    <a href='/pegas/profile/$username'>$username</a>
+                    <img src='/$profileImg' alt='$first_name $last_name'>
+                    <a href='/profile/$username'>$username</a>
                     <p>$first_name $last_name</p>
                     <small>$bio</small>
                 </div>

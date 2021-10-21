@@ -1,6 +1,6 @@
 <?php
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
 
     $postId = mysqli_real_escape_string($conn, $_GET["post_id"]);
     $sql = "SELECT * FROM comments WHERE post_id=? ORDER BY 1 DESC;";
@@ -47,9 +47,9 @@
                 <div class='col-md-12 comment'>
                     $delete
                     <div class='comment-info'>
-                        <img class='comment-profile' src='/pegas/$img' alt='$username'>
+                        <img class='comment-profile' src='/$img' alt='$username'>
                         <div class='comment-info-user'>
-                            <a href='/pegas/profile/$user_name' title='$first_name $last_name'>$user_name</a>
+                            <a href='/profile/$user_name' title='$first_name $last_name'>$user_name</a>
                             <p>$formatDate</p>
                         </div>
                     </div>

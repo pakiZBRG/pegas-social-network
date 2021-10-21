@@ -3,7 +3,7 @@
     include "googleButton.php";
 
     if(!sizeof($_SESSION)) {
-        header("Location: /pegas");
+        header("Location: /");
     }
 
     // Find if the email is already stored in database
@@ -47,18 +47,18 @@
 <nav class='nav'>
     <div class='container-fluid nav-flex'>
         <div class="nav-header">
-            <a href="/pegas/home">
-                <img src='/pegas/img/pegas.png' logo="pegas" class='nav-header-logo'>
+            <a href="/home">
+                <img src='/img/pegas.png' logo="pegas" class='nav-header-logo'>
             </a>
         </div>
         <div class='nav-article'>
             <ul class='nav-article-content'>
-                <li><a href='/pegas/profile/<?php echo $user_name; ?>' id='navName'><?php echo $user_name; ?></a></li>
-                <li><a href='/pegas/home'>Home</a></li>
-                <li><a href='/pegas/members'>Connect</a></li>
-                <li><a href='/pegas/messages/<?php echo $user_name; ?>'>Messages</a></li>
-                <li><a href='/pegas/edit/<?php echo $user_name ?>'>Edit Account</a></li>
-                <li><a href='/pegas/logout'>Logout</a></li>
+                <li><a href='/profile/<?php echo $user_name; ?>' id='navName'><?php echo $user_name; ?></a></li>
+                <li><a href='/home'>Home</a></li>
+                <li><a href='/members'>Connect</a></li>
+                <li><a href='/messages/<?php echo $user_name; ?>'>Messages</a></li>
+                <li><a href='/edit/<?php echo $user_name ?>'>Edit Account</a></li>
+                <li><a href='/logout'>Logout</a></li>
             </ul>
         </div>
     </div>
@@ -71,28 +71,28 @@
 <div class="mobile-nav" id='mobileNav'>
     <div class='mobile-nav-close' onclick='closeModal()'>close</div>
     <div class="mobile-nav-header">
-        <a href="/pegas/home">
-            <img src='/pegas/img/pegas.png' logo="pegas" class='nav-header-logo'>
+        <a href="/home">
+            <img src='/img/pegas.png' logo="pegas" class='nav-header-logo'>
         </a>
     </div>
     <div class='mobile-nav-article'>
         <ul class='mobile-nav-article-content'>
-            <a href='/pegas/profile/<?php echo $user_name; ?>' id='navName'>
+            <a href='/profile/<?php echo $user_name; ?>' id='navName'>
                 <li><?php echo $user_name; ?></li>
             </a>
-            <a href='/pegas/home'>
+            <a href='/home'>
                 <li>Home</li>
             </a>
-            <a href='/pegas/members'>
+            <a href='/members'>
                 <li>Connect</li>
             </a>
-            <a href='/pegas/messages/<?php echo $user_name; ?>'>
+            <a href='/messages/<?php echo $user_name; ?>'>
                 <li>Messages</li>
             </a>
-            <a href='/pegas/edit/<?php echo $user_name ?>'>
+            <a href='/edit/<?php echo $user_name ?>'>
                 <li>Edit Account</li>
             </a>
-            <a href='/pegas/logout'>
+            <a href='/logout'>
                 <li>Logout</li>
             </a>
         </ul>

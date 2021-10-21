@@ -5,9 +5,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\vendor\autoload.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\vendor\autoload.php";
 
-    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]).'/pegas')->load();
+    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();
     $user_email = $_ENV["USER_EMAIL"];
     $user_pass = $_ENV["USER_PASS"];
 
@@ -17,7 +17,7 @@
         $selector = bin2hex(random_bytes(8));
         $token = random_bytes(32);
         
-        $url = "http://".$_SERVER["HTTP_HOST"]."/pegas/reset/$selector/".bin2hex($token);
+        $url = "http://".$_SERVER["HTTP_HOST"]."/reset/$selector/".bin2hex($token);
 
         $expires = date("U") + 1800;
         $email = mysqli_real_escape_string($conn, $_GET["email"]);
@@ -79,5 +79,5 @@
             }
         }
     } else {
-        header('Location: /pegas');
+        header('Location: /');
     }

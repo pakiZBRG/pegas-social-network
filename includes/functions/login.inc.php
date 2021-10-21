@@ -25,7 +25,7 @@
                     $_SESSION["userId"] = $row["id"];
                     $_SESSION["userName"] = $row["username"];
                     $_SESSION["userEmail"] = $row["email"];
-                    header("Location: /pegas/home");
+                    header("Location: /home");
                 }
                 else {
                     warning('Wrong credentials');

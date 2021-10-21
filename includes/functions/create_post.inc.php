@@ -3,7 +3,7 @@
     include "../helpers/Messages.php";
 
     if(isset($_POST["userId"])){
-        require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\db.inc.php";
+        require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
 
         $user_id = mysqli_real_escape_string($conn, $_POST["userId"]);
         $content = mysqli_real_escape_string($conn, $_POST["content"]);
@@ -56,7 +56,7 @@
                     if($fileSize < 1000000){
 
                         $fileNewName = 'assets/'.$name."-".time().".".$fileAcutalExt;
-                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\" . $fileNewName;
+                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . $fileNewName;
                         move_uploaded_file($fileTmpName, $fileDestination);
                         $sql = "INSERT INTO posts (user_id, post_content, upload_image, post_date) VALUES (?, ?, ?, ?);";
                         $stmt = mysqli_prepare($conn, $sql);

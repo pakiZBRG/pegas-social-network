@@ -3,7 +3,7 @@
 
     if(sizeof($_SESSION) != 0){
         if($_SESSION["userEmail"]) {
-            header("Location: /pegas/home");
+            header("Location: /home");
         }
     }
 ?>
