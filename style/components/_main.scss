@@ -1,0 +1,101 @@
+.logo{
+    padding: 1rem 0;
+
+    &-img{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        height: 120px;
+    }
+
+    &-name{
+        text-align: center;
+        font-family: "Fredericka the Great";
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-join{
+        font-size: 2.4rem;
+        margin-top: 2rem;
+        font-weight: bolder;
+        letter-spacing: -1.5px;
+    }
+
+    &-form{
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+
+        & > input{
+            margin: 0.4em 0;
+        }
+
+        & input{
+            border: none;
+            max-width: 400px;
+            font-size: 1.2rem;
+            padding: .5rem;
+            border-bottom: 3px solid #adadad;
+            transition: 400ms;
+
+            &:focus{
+                outline: none;
+                border-color: crimson;
+            }
+        }
+
+        &-forgot{
+            color: crimson;
+            &:hover{
+                color: crimson;
+            }
+        }
+
+        &-login{
+            border: none;
+            margin-top: 0.8rem;
+            border-radius: 1.5rem;
+            background: crimson;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: .4rem 0;
+            cursor: pointer;
+        }
+
+        &-google {
+            text-align: center;
+            margin-top: 0.4rem;
+            border: 1px solid #DB4437;
+            border-radius: 1.5rem;
+            color: #DB4437;
+            background: transparent;
+            font-size: 1.1rem;
+            padding: .4rem 0;
+            cursor: pointer;
+            transition: 100ms ease-out;
+            &:hover {
+                color: whitesmoke;
+                background: #DB4437;
+            }
+        }
+
+        &-signup{
+            color: crimson;
+            margin-left: auto;
+            margin-top: 0.3rem;
+
+            &:hover{
+                text-decoration: underline;
+                color: crimson;
+            }
+        }
+    }
+}

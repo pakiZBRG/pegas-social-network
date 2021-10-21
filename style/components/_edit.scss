@@ -1,0 +1,62 @@
+.edit-form{
+    display: flex;
+    max-width: 40rem;
+    min-width: 18rem;
+    flex-direction: column;
+    justify-content: center;
+
+    & textarea{
+        min-width: 100%;
+        width: 18rem;
+        resize: none;
+        margin: 0.3rem 0 0.3rem 0;
+        padding: .4rem;
+        font-size: 1.2rem;
+        border: none;
+        border: 3px solid transparent;
+        border-bottom-color: #adadad;
+        transition: 300ms ease-in-out;
+        color: #333;
+        &:focus {
+            border-bottom-color: crimson !important;
+        }
+    }
+
+    .limit {
+        margin-left: auto;
+        font-size: .9rem;
+        color: gray;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: .3rem;
+    }
+
+    & .home-card-img {
+        min-height: 30rem;
+        position: relative;
+        transition: 300ms ease-out;
+        &:hover img {
+            filter: brightness(70%);
+        }
+        &:hover .chooseImgBtn {
+            opacity: 1;
+        }
+    }
+
+    & .chooseImgBtn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 10rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        opacity: 0;
+        background: crimson;
+        text-align: center;
+        color: whitesmoke;
+        transition: opacity 300ms ease-out;
+        padding: .3rem;
+    }
+}

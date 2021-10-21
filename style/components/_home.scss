@@ -1,0 +1,262 @@
+.home {
+    &-post{
+        padding:  0 0.5rem;
+        margin: 1rem auto;
+        width: 60%;
+        @media(max-width: 600px){
+            width: 100%;
+        }
+
+        & textarea {
+            width: 100%;
+            font-size: 1.1rem;
+            border: none;
+            padding: .1rem .3rem;
+            resize: none;
+            border-bottom: 3px solid transparent;
+            border-bottom-color: #adadad;
+            transition: 300ms ease-in-out;
+            color: #333;
+            &:focus {
+                border-bottom-color: crimson !important;
+            }
+        }
+
+        &-btn{
+            display: flex;
+            justify-content: space-evenly;
+            & .postBtn {
+                width: 45%;
+                margin: 0;
+                padding: .3rem;
+                font-size: 1.1rem;
+                border: none;
+                text-align: center;
+                background: transparent;
+                margin-bottom: 0.9rem;
+                border-radius: 3rem;
+                transition: 200ms ease-in;
+            }
+            & .folder {
+                border: 1px solid crimson;
+                cursor: pointer;
+                background: crimson;
+                color: whitesmoke;
+                &:hover {
+                    background: transparent;
+                    color: crimson;
+                }
+            }
+            & .button{
+                border: 1px solid seagreen;
+                background: seagreen;
+                color: whitesmoke;
+                &:hover {
+                    background: transparent;
+                    color: seagreen;
+                }
+            }
+        }
+
+        & .limit {
+            float: right;
+            font-size: .9rem;
+            color: gray;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &-feed{
+        text-align: center;
+        padding: 1.5rem 0;
+        font-weight: bold;
+    }
+
+    &-card {
+        margin: 1rem auto;
+        background: #fff;
+        width: calc(20em + 25vw);
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        @media(max-width: 660px){
+            width: 100%;
+        }
+
+        &-full {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &-icons{
+            border-radius: 0 !important;
+            float: right;
+            padding: 0.5rem;
+
+            & a {
+                text-decoration: none;
+                &:hover{
+                    text-decoration: none;
+                }
+                & .action {
+                    background: none;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    font-size: 1.1rem;
+                    border: none;
+                    border-radius: 50%;
+                    transition: 300ms ease-out;
+                    color: white;
+                }
+                & .edit {
+                    background: rgba(100, 148, 237, 0.6);
+                    &:hover{
+                        background: CornflowerBlue;
+                    }
+                }
+                & .delete {
+                    background: rgba(220, 20, 60, 0.6);
+                    &:hover{
+                        background: crimson;
+                    }
+                }
+            }
+
+        }
+
+        &-flex{
+            display: flex;
+            margin: 1rem 0 1.5rem 1rem;
+
+            &-user{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 1rem;
+                position: relative;
+
+                & h5 a {
+                    color: crimson !important;
+                }
+
+                & h6 {
+                    margin: 0;
+                    color: rgb(75, 75, 75);
+                }
+            }
+        }
+
+        &-footer {
+            width: 100%;
+            display: flex;
+            background: #eee;
+            & .card {
+                width: 100%;
+                text-decoration: none;
+                border: none;  
+                background: #eee; 
+                display: flex;
+                transition: 200ms ease-in-out;
+                align-items: center;
+                &-btn {
+                    width: 100%;
+                    padding: 0.3rem;
+                    color: whitesmoke;
+                    border: 1px solid transparent;
+                    background: transparent;
+                    border: 1px solid transparent;
+                }
+                & .cmt {
+                    border-color: CornflowerBlue;
+                    color: CornflowerBlue;
+                    border-bottom-right-radius: 2rem;
+                    & span {
+                        color: CornflowerBlue;
+                    }
+                    & i {
+                        font-size: .9rem;
+                        margin-right: 0.3rem;
+                    }
+                    &:hover {
+                        background: CornflowerBlue;
+                        & span, & i {
+                            color: whitesmoke;
+                        }
+                    }
+                }
+                & .like {
+                    border-bottom-left-radius: 2rem;
+                    border-color: OrangeRed;
+                    color: OrangeRed;
+                    & span {
+                        color: OrangeRed;
+                    }
+                    & i {
+                        font-size: .9rem;
+                        margin-right: 0.3rem;
+                    }
+                    &:hover {
+                        background: OrangeRed;
+                        & span, & i {
+                            color: whitesmoke;
+                        }
+                    }
+                }
+
+                & .accept {
+                    border-color: seagreen;
+                    color: seagreen;
+                    border-radius: 2rem;
+                    &:hover {
+                        background: seagreen;
+                        color: whitesmoke;
+                    }
+                }
+                & .decline {
+                    border-color: crimson;
+                    color: crimson;
+                    border-radius: 2rem;
+                    &:hover {
+                        background: crimson;
+                        color: whitesmoke;
+                    }
+                }
+            }
+        }
+
+        &-profile{
+            height: 3.5rem; 
+            width: 3.5rem;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        &-content{
+            padding: 0rem 1.5rem 1rem 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        &-img{
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+#liked {
+    background: OrangeRed;
+    & span, & i {
+        color: whitesmoke;
+    }
+}
+
+#non-liked {
+    background: crimson;
+    color: whitesmoke;
+    cursor: default;
+    border-color: transparent;
+    & span {
+        color: whitesmoke;
+    }
+}

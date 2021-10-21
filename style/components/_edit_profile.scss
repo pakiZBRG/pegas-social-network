@@ -1,0 +1,59 @@
+.editProfile {
+    display: flex;
+    max-width: 30rem;
+    min-width: 18rem;
+    flex-direction: column;
+    & .form_control {
+        width: 100%;
+        label {
+            display: block;
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        input,
+        textarea {
+            min-width: 100%;
+            width: 18rem;
+            resize: none;
+            margin: 0.3rem 0 0.6rem 0;
+            padding: .1rem .4rem;
+            font-size: 1.2rem;
+            border: none;
+            border: 3px solid transparent;
+            border-bottom-color: #adadad;
+            transition: 300ms ease-in-out;
+            color: #333;
+            &:focus {
+                border-bottom-color: crimson !important;
+            }
+        }
+
+        .limit {
+            float: right;
+            font-size: .9rem;
+            color: gray;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    button {
+        border: none;
+        margin-top: .5rem;
+        border-radius: 50px;
+        background: crimson;
+        color: #fff;
+        font-size: 1.4rem;
+        padding-top: 0.3rem;
+    }
+}
+
+.delete-acc {
+    color: crimson;
+    width: fit-content;
+    user-select: none;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

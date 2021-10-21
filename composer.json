@@ -1,0 +1,21 @@
+{
+    "name": "pakizbrg/pegas",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.5",
+        "google/apiclient": "^2.11",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Pakizbrg\\Pegas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pakiZBRG",
+            "email": "pavlovicnikola511@gmail.com"
+        }
+    ]
+}

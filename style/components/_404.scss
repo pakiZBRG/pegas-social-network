@@ -1,0 +1,17 @@
+.not-found {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+
+    &__center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        font-size: 1.2rem;
+        & span {
+            color: crimson;
+            font-size: 1.2rem;
+        }
+    }
+}

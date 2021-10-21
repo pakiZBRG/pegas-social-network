@@ -1,0 +1,56 @@
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-header{
+        margin-top: 2rem;
+    }
+
+    &-form{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+
+        & > input{
+            margin: 0.3em 0;
+        }
+
+        & input{
+            border: none;
+            max-width: 16rem;
+            font-size: 1.2rem;
+            padding: .5rem;
+            border-bottom: 3px solid #adadad;
+            transition: 400ms;
+
+            &:focus{
+                outline: none;
+                border-color: #dc143c;
+            }
+        }
+
+        &-btn{
+            border: none;
+            margin-top: 1.5rem;
+            border-radius: 50px;
+            background: crimson;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        &-login{
+            color: crimson;
+            margin-left: auto;
+            margin-top: 0.3rem;
+
+            &:hover{
+                text-decoration: underline;
+                color: crimson;
+            }
+        }
+    }
+}

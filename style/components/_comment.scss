@@ -1,0 +1,80 @@
+.comment {
+    padding: 0.7rem 0 0.6rem 0;
+    position: relative;
+    border-top: 1px solid #999;
+
+    & span {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: .9rem;
+        color: crimson;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        };
+    }
+
+    &-info{
+        display: flex;
+        align-items: center;
+
+        &-user {
+            margin-left: .5rem;
+            align-items: center;
+            & a {
+                font-size: .9rem;
+            }
+            & p {
+                font-size: .7rem;
+                color: #555;
+            }
+        }
+    }
+
+    &-profile{
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &-content {
+        padding: .5rem 0 0 3rem;
+    }
+
+    &-form{
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+
+        & input {
+            width: 80%;
+            font-size: 1.1rem;
+            border: none;
+            padding: .1rem .3rem;
+            resize: none;
+            border-bottom: 3px solid transparent;
+            border-bottom-color: #adadad;
+            transition: 300ms ease-in-out;
+            color: #333;
+            &:focus {
+                border-bottom-color: crimson !important;
+            }
+        }
+    }
+}
+
+.cmtBtn{
+    border: none;
+    background: crimson;
+    border-radius: 0;
+    color: whitesmoke;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.1rem;
+}
+
+.comNum {
+    color: #fff;
+    margin-left: .5rem;
+}

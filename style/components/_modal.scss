@@ -1,0 +1,71 @@
+#myImg {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#myImg:hover {
+    filter: brightness(70%);
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .8);
+    &-content {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: contain;
+        animation-name: zoom; 
+        animation-duration: 700ms;
+    }
+}
+
+.deleteUser {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .3);
+    &-header {
+        background: crimson;
+        padding: .5rem;
+        color: whitesmoke;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-popup {
+        background: whitesmoke;
+        width: 30rem;
+        max-width: 100%;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        box-shadow: 0 0 10px #222;
+        transform: translate(-50%, -50%);
+        animation-name: zoom; 
+        animation-duration: 700ms;
+    }
+    &-content {
+        padding: 1rem;
+        & button {
+            border: none;
+            background: crimson;
+            color: whitesmoke;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            margin-top: 0.8rem;
+        }
+    }
+}
+
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1) translate(-50%, -50%);}
+}

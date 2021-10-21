@@ -1,0 +1,133 @@
+.nav{
+    background: crimson;
+    height: 5rem;
+    @include md-screen {
+        display: none !important;
+    }
+
+    &-flex{
+        display: flex;
+        align-items: center;
+    }
+
+    &-header{
+        display: flex;
+        align-items: center;
+        @include lg-screen {
+            display: none;
+        }
+
+        &-logo {
+            height: 3rem;
+        }
+    
+        &-brand{
+            font-size: 1.3rem;
+            color: #fff;
+            margin-left: 1rem;
+            &:hover{
+                color: #fff;
+            }
+        }
+    }
+
+    &-article{
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+
+        &-content{
+            list-style: none;
+            padding: 0 !important;
+            display: flex;
+            flex-direction: row;
+
+            & li{
+                margin-right: 3rem;
+                font-size: 1.2rem;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                a {color: whitesmoke !important;}
+            }
+        }
+    }
+}
+
+.hamburger{
+    display: none;
+    @include md-screen {
+        display: block;
+        position: fixed;
+        bottom: -4rem;
+        right: -4rem;
+        height: 9rem;
+        width: 9rem;
+        background: crimson;
+        color: whitesmoke;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #222;
+        cursor: pointer;
+        & p {
+            position: absolute;
+            top: 2.5rem;
+            left: 1.3rem;
+            text-transform: uppercase;
+            font-size: .9rem;
+            letter-spacing: 1.7px;
+        }
+    }
+}
+
+.mobile-nav {
+    display: none;
+    @include md-screen {
+        display: block;
+        position: fixed;
+        bottom: -20rem;
+        left: 0;
+        width: 100%;
+        background: crimson;
+        z-index: 10;
+        box-shadow: 0 0 10px 1px #222;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        &-close {
+            position: absolute;
+            top: .5rem;
+            right: 1.5rem;
+            text-transform: uppercase;
+            font-size: .8rem;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        &-header {
+            margin: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        &-article-content {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            padding: 0;
+            flex-wrap: wrap;
+            padding-bottom: .5rem;
+            & a {
+                margin: 0.5rem;
+                color: whitesmoke;
+                padding: 0.4rem 1rem;
+                border-radius: 2rem;
+                text-decoration: underline;
+                transition: 100ms ease-in-out;
+                &:hover {
+                    background: whitesmoke;
+                    color: crimson;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

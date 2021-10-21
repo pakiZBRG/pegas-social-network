@@ -1,0 +1,85 @@
+.connect{
+    &-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0;
+        @media(max-width: 560px){
+            margin: 0 1rem;
+        }
+
+        & input[type=text]{
+            align-self: center;
+            width: 100%;
+            font-size: 1.2rem;
+            border: none;
+            padding: .4rem;
+            resize: none;
+            border-bottom: 3px solid transparent;
+            border-bottom-color: #adadad;
+            transition: 300ms ease-in-out;
+            color: #333;
+            &:focus {
+                border-bottom-color: crimson !important;
+            }
+        }
+    }
+
+    &-card{
+        background: white;
+        margin: 0.4rem;
+        padding: 0.6rem;
+        box-shadow: 1px 1px 4px #333;
+
+        &-row{
+            display: flex;
+            position: relative;
+
+            & img{
+                height: 4rem;
+                width: 4rem;
+                object-fit: cover;
+                border-radius: 50%;
+                @media (max-width: 560px){
+                    height: 2rem;
+                    width: 2rem;
+                }
+            }
+
+            & p{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 0.8rem;
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translate(0, -50%);
+                & span {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        &-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 1rem;
+
+            & a{color: crimson;}
+
+            & h5 {
+                @media(max-width: 560px){
+                    font-size: 1.1rem;
+                }
+            }
+
+            & h6 {
+                @media(max-width: 560px){
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

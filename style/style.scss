@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Josefin+Sans:wght@400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans' !important;
+    background: #eeeeee !important;
+    overflow-x: hidden;
+}
+
+.width-90{
+    width: 90%;
+    margin: 0 auto;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+    outline: none;
+}
+
+p, ul, form{ margin: 0 !important;}
+
+.error{
+    color: crimson;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+#message {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.msg {
+    width: 30rem;
+    padding: 0.3rem 1rem 0.2rem 1rem;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 1.1rem;
+    & i {
+        margin-right: 0.5rem;
+    }
+}
+
+.warning {
+    background: rgba(205, 133, 63, .1);
+    color: Peru;
+    border-color: Peru;
+}
+
+.danger {
+    background: rgba(220, 20, 60, .2);
+    color: crimson;
+    border-color: crimson;
+}
+
+.success {
+    background: rgba(46, 139, 87, .2);
+    color: seagreen;
+    border-color: seagreen;
+}
+
+.no_post {
+    color: #555;
+    font-size: 2rem;
+}
+
+@import './components/breakpoints';
+@import './components/main';
+@import './components/comment';
+@import './components/signup';
+@import './components/nav';
+@import './components/home';
+@import './components/profile';
+@import './components/edit';
+@import './components/single';
+@import './components/connect';
+@import './components/messages';
+@import './components/edit_profile';
+@import './components/modal';
+@import './components/404';
+@import './components/tooltip';

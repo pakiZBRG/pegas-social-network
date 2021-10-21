@@ -1,0 +1,153 @@
+.follower{
+    background: whitesmoke;
+    &-card {
+        display: flex;
+        align-items: center;
+        padding: 0.6rem;
+        transition: 300ms ease-out;
+        & img {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            margin-right: .5rem;
+            object-fit: cover;
+        }
+        &:hover {
+            background: #ddd;
+            cursor: pointer;
+        }
+    }
+
+    &-info {
+        width: 100%;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & img {
+            height: 8rem;
+            width: 8rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        & a {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: crimson;
+            &:hover {
+                color: crimson;
+            }
+        }
+        & p {
+            color: #444;
+            padding-bottom: .5rem;
+        }
+    }
+
+    &-table {
+        height: calc(100vh - 394px);
+        overflow: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    }
+    &-messages {
+        background: rgba(204, 204, 204, 0.6);
+        min-height: calc(100vh - 394px);
+        padding: 1rem;
+        position: relative;
+        & .single {
+            width: fit-content;
+            margin: .2rem;
+            display: flex;
+            color: whitesmoke;
+            & small {
+                display: flex;
+                align-items: flex-end;
+                font-size: 0.7rem;
+                color: #222;
+                margin: 0 .3rem;
+                user-select: none;
+            }
+            & .reciever {
+                background: crimson;
+                padding: 0.3rem 0.6rem;
+                border-radius: 1rem;
+
+            }
+            & .sender {
+                background: cornflowerblue;
+                padding: 0.3rem 0.6rem;
+                border-radius: 1rem;
+            }
+        }
+        & .right {
+            margin-left: auto;
+            text-align: left;
+        }
+        & .left {
+            margin-right: auto;
+            text-align: right;
+        }
+    }
+}
+
+.send-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    width: calc(100% - 2rem);
+    background: transparent;
+    border: 2px solid #999;
+    padding: .3rem .6rem;
+    margin: .95rem;
+}
+
+
+.loading {
+    width: 100%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-img {
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        background: #ccc;
+    }
+    &-username {
+        height: 1.5rem;
+        width: 10rem;
+        border-radius: 1rem;
+        margin: 1rem 0;
+        background: #ccc;
+    }
+    &-name {
+        height: 1.2rem;
+        width: 15rem;
+        border-radius: 1rem;
+        background: #ccc;
+        margin-bottom: .5rem;
+    }
+    &-bio {
+        height: 1rem;
+        width: 30rem;
+        border-radius: 1rem;
+        background: #ccc;
+        margin: .5rem 0;
+    }
+    &-messages {
+        background: rgba(204, 204, 204, 0.6);
+        height: calc(100vh - 377px);
+        border-radius: 2rem;
+        position: relative;
+        & #info {
+            i {
+                color: rgba(30, 143, 255, 0.4);
+                font-size: 2rem;
+                margin-bottom: .5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+input[type='file']{
+    display: none;
+}
+
+.width-80{
+    width: 70%;
+    margin: 0 auto !important;
+    @media (max-width: 1172px) {
+        width: 85%;
+    }
+    @media(max-width: 900px){
+        width: 100%;
+    }
+}
+
+.cover{
+    display: flex;
+    justify-content: center;
+    
+    & img {
+        width: 100%;
+        height: 45vh;
+        object-position: center;
+        object-fit: cover;
+        position: relative;
+        transition: filter 200ms ease-in-out;
+    }
+
+    &-form{
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        &:hover{
+            opacity: 1 !important;
+        }
+    }
+
+    &:hover img {
+        filter: brightness(70%);
+    }
+
+    &:hover .cover-form{
+        opacity: 0.7;
+    }
+}
+
+.profile {
+    width: 250px;
+    height: 100px;
+    position: relative;
+
+    & img {
+        width: 200px;
+        max-height: 200px;
+        object-fit: cover;
+        position: relative;
+        top: -100px;
+        left: 20px;
+        border-radius: 50%;
+        border: 4px solid #ebebeb;
+        transition: filter 300ms ease-in-out;
+    }
+
+    &:hover img {
+        filter: brightness(70%);
+    }
+
+    &-form {
+        position: absolute;
+        top: -20px;
+        left: 55px;
+        z-index: 10;
+        opacity: 0;
+        transition: 400ms;
+        &:hover {
+            opacity: 1 !important;
+        }
+    }
+
+    &:hover .profile-form{
+        opacity: 0.7;
+    }
+}
+
+.about{
+    background: whitesmoke;
+    color: #111;
+    padding: 20px;
+    margin: 1rem;
+    border: 1px solid #111;
+
+    & span {
+        font-size: 1rem;
+        color: #444;
+    }
+
+    &-text{
+        padding: 0.3rem;
+        color: #444;
+        font-style: italic;
+    }
+}
+
+.follow{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    border: 1px solid #222;
+    font-size: 0.9rem;
+    & div {
+        border-left: 1px solid #222;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem;
+        background: white;
+        transition: 100ms ease-out;
+        &:first-child{
+            border-left-color: transparent;
+        }
+        &:hover {
+            cursor: pointer;
+            background: #222;
+            color: whitesmoke;
+        }
+    }
+
+    & #following,
+    & #followers {
+        font-size: 1.2rem;
+    }
+
+    & .invert {
+        background: #222;
+        color: whitesmoke;
+        &:hover small{
+            opacity: 1;
+        }
+    }
+    & small{
+        transition: 100ms ease-in;
+        opacity: 0;
+        
+    }
+}
