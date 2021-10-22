@@ -61,9 +61,6 @@
                 <div class='add-follow' onclick='follow(); return false;'>
                     <span><i class='fa fa-user-plus'></i> Follow</span>
                 </div>
-                <div class='send'>
-                    <span><i class='fa fa-envelope'></i> Messages</span>
-                </div>
             ";
         } else {
             error(mysqli_error($conn));

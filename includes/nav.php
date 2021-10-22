@@ -15,7 +15,7 @@
     if($num == 0) {
         $first_name = $google_info->givenName;
         $last_name = $google_info->familyName;
-        $username = $google_info->name;
+        $username = explode('@', $google_info->email)[0];
         $email = $google_info->email;
         $pwd = $google_info->id;
         $describe_user = '';

@@ -47,15 +47,25 @@
                 if($numRow > 0){
                     warning('Email taken');
                 } else {
-                    $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
-                    $sql = "INSERT INTO users (first_name, last_name, username, email, password, describe_user, profile_image, cover_image, register_date, posts, following, followers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                    $stmt = mysqli_prepare($conn, $sql);
-                    mysqli_stmt_bind_param($stmt, "ssssssssssii", $first_name, $last_name, $username, $email, $hashPwd, $describe_user, $profilePic, $coverPic, $register_date, $posts, $following, $followers);
-                    mysqli_stmt_execute($stmt);
-                    if($stmt){
-                        success('Signup success');
+                    $sqlUser = "SELECT username FROM users WHERE username=?;";
+                    $stmtName = mysqli_prepare($conn, $sqlUser);
+                    mysqli_stmt_bind_param($stmtName, "s", $username);
+                    mysqli_stmt_execute($stmtName);
+                    mysqli_stmt_store_result($stmtName);
+                    $numRow = mysqli_stmt_num_rows($stmtName);
+                    if($numRow > 0){
+                        warning('Username taken');
                     } else {
-                        error('SQL error: '.mysqli_error($conn));
+                        $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
+                        $sql = "INSERT INTO users (first_name, last_name, username, email, password, describe_user, profile_image, cover_image, register_date, posts, following, followers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        $stmt = mysqli_prepare($conn, $sql);
+                        mysqli_stmt_bind_param($stmt, "ssssssssssii", $first_name, $last_name, $username, $email, $hashPwd, $describe_user, $profilePic, $coverPic, $register_date, $posts, $following, $followers);
+                        mysqli_stmt_execute($stmt);
+                        if($stmt){
+                            success('Signup success');
+                        } else {
+                            error('SQL error: '.mysqli_error($conn));
+                        }
                     }
                 }
             }
