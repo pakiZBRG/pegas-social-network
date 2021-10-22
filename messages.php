@@ -1,6 +1,6 @@
-<?php include "./includes/header.php" ?>
-<?php include "./includes/nav.php" ?>
-<?php include "./includes/db.inc.php" ?>
+<?php require '/app/includes/header.php' ?>
+<?php require '/app/includes/nav.php' ?>
+<?php require '/app/includes/db.inc.php' ?>
     <div class="row" style='height: calc(100vh - 80px);'>
         <div class="col-lg-3 pr-0 follower">
             <input type='hidden' value='<?php echo $_SESSION["userId"]; ?>' id='userId' />
@@ -52,4 +52,4 @@
             </div>
         </div>
     </div>
-<?php include "./includes/footer.php" ?>
+<?php require '/app/includes/footer.php' ?>

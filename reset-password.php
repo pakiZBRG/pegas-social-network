@@ -1,5 +1,5 @@
 <?php
-    require "./includes/db.inc.php";
+    require "/app/includes/db.inc.php";
     
     $selector = $_GET["selector"];
     $validator = explode("/", $_SERVER["REQUEST_URI"])[4];
@@ -23,7 +23,7 @@
         mysqli_stmt_execute($stmt);
     }
 ?>
-<?php include './includes/header.php' ?>
+<?php include '/app/includes/header.php' ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="logo">
@@ -51,4 +51,4 @@
             </form>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php include '/app/includes/footer.php' ?>

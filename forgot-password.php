@@ -1,4 +1,4 @@
-<?php include './includes/header.php' ?>
+<?php require '/app/includes/header.php' ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="logo">
@@ -28,4 +28,4 @@
             </form>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php require '/app/includes/footer.php' ?>

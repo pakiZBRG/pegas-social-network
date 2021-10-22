@@ -1,8 +1,8 @@
 <?php 
 
-    include './includes/header.php';
-    include './includes/nav.php';
-    include "./includes/db.inc.php";
+    require '/app/includes/header.php';
+    require '/app/includes/nav.php';
+    require '/app/includes/db.inc.php';
 
     $userName = $_GET["username"];
     $loggedUser = $_SESSION["userId"];
@@ -143,9 +143,9 @@
                 </div>
                 <input type="hidden" id="userId" value="<?php echo $loggedUser; ?>">
                 <div id="feeds" class="row mx-auto" style='width: 100%'>
-                    <?php include "./includes/functions/single_post.inc.php" ?>
+                    <?php require '/app/includes/functions/single_post.inc.php' ?>
                 </div>
             </div>
         </div>
     </div>
-<?php include "./includes/footer.php" ?>
+<?php require '/app/includes/footer.php' ?>

@@ -1,8 +1,8 @@
 <?php 
 
-    include "includes/header.php";
-    include "includes/nav.php";
-    include "includes/db.inc.php";
+    require '/app/includes/header.php';
+    require '/app/includes/nav.php';
+    require '/app/includes/db.inc.php';
 
     $user_id = $_SESSION["userId"];
     $sql = "SELECT * FROM users WHERE id=?";
@@ -65,8 +65,8 @@
             </form>
         </div>
     </div>
-    <?php include "includes/modal.php" ?>  
+    <?php require '/app/includes/modal.php' ?>  
     <script>
         textLimit('#bio', 150, '#updateBtn');
     </script>
-<?php include "includes/footer.php" ?>
+<?php require '/app/includes/footer.php' ?>

@@ -1,4 +1,4 @@
-<?php include './includes/header.php' ?>
+<?php require '/app/includes/header.php' ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="logo">
@@ -16,7 +16,7 @@
                     <h2>Create an account</h2>
                 </div>
                 <div id="message">
-                    <?php include 'includes/functions/insert_user.inc.php' ?>
+                    <?php require '/app/includes/functions/insert_user.inc.php' ?>
                 </div>
                 <form method="POST" class='signup-form'>
                     <input type="text" id='first_name' placeholder="First Name">
@@ -33,4 +33,4 @@
             </div>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php require '/app/includes/footer.php' ?>

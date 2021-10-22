@@ -1,5 +1,5 @@
-<?php include './includes/header.php' ?>
-<?php include './includes/nav.php' ?>
+<?php require '/app/includes/header.php' ?>
+<?php require '/app/includes/nav.php' ?>
     <div class="row width-80 pb-4">
         <div class="col-sm-12">
             <h2 class='text-center p-4'>Connect with people, or bots</h2>
@@ -8,7 +8,7 @@
             </form>
         </div>
         <div class="col-sm-12" id="members">
-            <?php include "./includes/functions/search_user.inc.php" ?>
+            <?php require '/app/includes/functions/search_user.inc.php' ?>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php require '/app/includes/footer.php' ?>
