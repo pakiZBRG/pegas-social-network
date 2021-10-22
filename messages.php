@@ -18,7 +18,7 @@
                         $user = $row["followed"];
                     }
 
-                    $user = "SELECT * FROM users WHERE id=$follower";
+                    $user = "SELECT * FROM users WHERE id=$user";
                     $stmt_u = mysqli_prepare($conn, $user);
                     mysqli_stmt_execute($stmt_u);
                     $result_u = mysqli_stmt_get_result($stmt_u);

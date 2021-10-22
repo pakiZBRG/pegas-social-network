@@ -1,6 +1,6 @@
 <?php
 
-    require "/includes/db.inc.php";
+    require "/app/includes/db.inc.php";
 
     // Post data
     if(isset($_GET["limit"], $_GET["start"])){
