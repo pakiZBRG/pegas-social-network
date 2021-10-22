@@ -63,7 +63,7 @@ function forgotPassword() {
 
     $.ajax({
         method: "GET",
-        url: "/includes/functions/reset-request.inc.php",
+        url: "/app/includes/functions/reset-request.inc.php",
         data: {
             email,
             forgotPassword,
