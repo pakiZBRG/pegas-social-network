@@ -10,6 +10,6 @@ function closeModal() {
     var menu = $(".hamburger");
     var navigation = $('#mobileNav');
 
-    navigation.animate({bottom: '-10rem'}, 600)
+    navigation.animate({bottom: '-20rem'}, 600)
     menu.animate({right: '-4rem'}, 400)
 }
