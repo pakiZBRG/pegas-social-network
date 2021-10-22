@@ -59,6 +59,7 @@
 .hamburger{
     display: none;
     @include md-screen {
+        z-index: 101;
         display: block;
         position: fixed;
         bottom: -4rem;
@@ -84,6 +85,7 @@
 .mobile-nav {
     display: none;
     @include md-screen {
+        z-index: 100;
         display: block;
         position: fixed;
         bottom: -20rem;

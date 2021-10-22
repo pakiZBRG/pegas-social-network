@@ -456,6 +456,7 @@ p, ul, form {
 
 @media only screen and (max-width: 992px) {
   .hamburger {
+    z-index: 101;
     display: block;
     position: fixed;
     bottom: -4rem;
@@ -485,6 +486,7 @@ p, ul, form {
 
 @media only screen and (max-width: 992px) {
   .mobile-nav {
+    z-index: 100;
     display: block;
     position: fixed;
     bottom: -20rem;
