@@ -1,6 +1,6 @@
 <?php
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
 
     $postId = mysqli_real_escape_string($conn, $_GET["post_id"]);
     $sql = "SELECT * FROM comments WHERE post_id=? ORDER BY 1 DESC;";

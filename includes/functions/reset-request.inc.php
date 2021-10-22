@@ -5,7 +5,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\vendor\autoload.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/vendor/autoload.php";
 
     if (file_exists(__DIR__ . '/.env')) { 
         $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();

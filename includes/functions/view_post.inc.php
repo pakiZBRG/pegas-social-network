@@ -1,7 +1,7 @@
 <?php
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\helpers\Messages.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/helpers/Messages.php";
     
     if(isset($_GET["post_id"])){
         $postId = mysqli_real_escape_string($conn, $_GET["post_id"]);

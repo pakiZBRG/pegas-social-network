@@ -1,6 +1,6 @@
 <?php
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
 
     if(array_key_exists("userEmail", $_GET)){
         $userEmail = mysqli_real_escape_string($conn, $_GET["userEmail"]);

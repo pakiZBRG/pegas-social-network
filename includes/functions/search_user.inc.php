@@ -1,7 +1,7 @@
 <?php 
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\db.inc.php";
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\includes\\helpers\Messages.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/helpers/Messages.php";
 
     if(sizeof($_GET) == 0) {
         $sql = "SELECT * FROM users";
