@@ -474,7 +474,7 @@ function displayTooltip(userId, postId) {
             userId
         },
         success: function(data) {
-            $(data).appendTo(`#tooltipPlace${postId}`).fadeIn(400);
+            $(data).appendTo(`#tooltipPlace${postId}`).fadeIn(200);
         },
         error: function(e) {
             console.log(e)
@@ -483,7 +483,7 @@ function displayTooltip(userId, postId) {
 }
 
 function removeTooltip(postId) {
-    $(`#tooltipPlace${postId} .user-tooltip`).fadeOut(400).remove();
+    $(`#tooltipPlace${postId} .user-tooltip`).remove();
 }
 
 // multipart/form-data
@@ -539,7 +539,6 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             success: function(data) {
-                console.log(data)
                 if(data.includes('assets')){
                     $('#profile').attr('src', data);
                 }

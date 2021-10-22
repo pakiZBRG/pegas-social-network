@@ -33,19 +33,17 @@
             $numRow = mysqli_stmt_num_rows($stmt);
             if($numRow > 0){
                 // Delete tokens for emails, if they exist in 30min span
-                $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
+                $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?";
                 $stmt = mysqli_prepare($conn, $sql);
                 mysqli_stmt_bind_param($stmt, "s", $email);
                 mysqli_stmt_execute($stmt);
             
-                $sql = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?, ?, ?, ?);";
+                $sql = "INSERT INTO pwdreset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?, ?, ?, ?);";
                 $stmt = mysqli_prepare($conn, $sql);
                 $hashToken = password_hash($token, PASSWORD_DEFAULT);
                 mysqli_stmt_bind_param($stmt, "ssss", $email, $selector, $hashToken, $expires);
                 mysqli_stmt_execute($stmt);
             
-                mysqli_stmt_close($stmt);
-                
                 $mail = new PHPMailer(true);
                 try {
                     //Server settings

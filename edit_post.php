@@ -22,7 +22,7 @@
 
     <div class="row width-90 mx-auto">
         <div class='col-sm-12'>
-            <h1 class='my-4 text-center'>Edit Post</h1>
+            <h1 class='my-4 text-center font-weight-bold' style='font-family: "Fredericka The Great";'>Edit Post</h1>
             <div id="message" class='mb-3'></div>
             <form method='POST' enctype='multipart/form-data' id='updatePost' class='edit-form mx-auto'>
                 <div class='form_control'>
@@ -32,7 +32,13 @@
                     <div id='length'></div>
                 </div>
                 <div class="home-card-img">
-                    <?php echo ($imageUrl ? "<img class='home-card-img' name='image' id='showImg' src='/pegas/$imageUrl'>" : null) ?>
+                    <?php
+                        if($imageUrl) {
+                            echo "<img style='height: 27rem' class='home-card-img' name='image' id='showImg' src='/pegas/$imageUrl'>";
+                        } else {
+                            echo "<img style='height: 4rem' class='home-card-img' name='image' id='showImg' src='/pegas/$imageUrl'>";
+                        }
+                    ?>
                     <label class='chooseImgBtn' title='Choose an image'>
                         <i class="fa fa-folder-open" style='padding: 0.3rem'></i>
                         <input type='file' name='image' onchange="loadFile(event)">

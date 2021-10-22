@@ -6,7 +6,7 @@
     $currentDate = date("U");
     
     // if token  is expired or invalid redirect to forgot-password page
-    $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=?;";
+    $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=?;";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $selector);
     mysqli_stmt_execute($stmt);
@@ -17,7 +17,7 @@
     } else if($row["pwdResetExpires"] < $currentDate){
         // Remove token if expired
         header("Location: /pegas/forgot-password/invalid");
-        $sql = "DELETE FROM pwdReset WHERE pwdResetExpires < ?";
+        $sql = "DELETE FROM pwdreset WHERE pwdResetExpires < ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $currentDate);
         mysqli_stmt_execute($stmt);

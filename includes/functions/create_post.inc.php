@@ -32,44 +32,49 @@
     
         $allowed = array('jpg', 'jpeg', 'png', 'webp');
 
+        // Empty post and image
         if(trim($content) == '' && $fileError == 4){
             warning('Insert content or image for the post');
+        // Filled post and empty image
         } else if(trim($content) && $fileError == 4) {
             $file = '';
-            $sql = "INSERT INTO posts (user_id, post_content, upload_image, post_date, likes) VALUES (?, ?, ?, ?, ?);";
-            $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "ssssi", $user_id, $content, $file, $date, $likes);
-            mysqli_stmt_execute($stmt);
+            $sql1 = "INSERT INTO posts (user_id, post_content, upload_image, post_date, likes) VALUES (?, ?, ?, ?, ?);";
+            $stmt1 = mysqli_prepare($conn, $sql1);
+            mysqli_stmt_bind_param($stmt1, "ssssi", $user_id, $content, $file, $date, $likes);
+            mysqli_stmt_execute($stmt1);
+            $error = mysqli_stmt_error($stmt1);
 
-            if($stmt){
+            if(!$error){
                 success("Post created");
-                $sql = "UPDATE users SET posts='yes' WHERE id=?;";
-                $stmt = mysqli_prepare($conn, $sql);
-                mysqli_stmt_bind_param($stmt, "s", $user_id);
-                mysqli_stmt_execute($stmt);
+                $sql2 = "UPDATE users SET posts='yes' WHERE id=?;";
+                $stmt2 = mysqli_prepare($conn, $sql2);
+                mysqli_stmt_bind_param($stmt2, "s", $user_id);
+                mysqli_stmt_execute($stmt2);
             } else {
-                error('SQL error: '.mysqli_error($conn));
+                error('SQL error: '.$error);
             }
+        // Both entered or entered image
         } else if((trim($content) && $file) || $fileError == 0) {
             if(in_array($fileAcutalExt, $allowed)){
                 if($fileError === 0){
                     if($fileSize < 1000000){
 
-                        $fileNewName = 'assets/'.$name."-".time().".".$fileAcutalExt;
-                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\" . $fileNewName;
-                        move_uploaded_file($fileTmpName, $fileDestination);
-                        $sql = "INSERT INTO posts (user_id, post_content, upload_image, post_date) VALUES (?, ?, ?, ?);";
-                        $stmt = mysqli_prepare($conn, $sql);
-                        mysqli_stmt_bind_param($stmt, "ssss", $user_id, $content, $fileNewName, $date);
-                        mysqli_stmt_execute($stmt);
-                        if($stmt){
+                        $fileNewName = "assets/".$name."-".time().".".$fileAcutalExt;
+                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$fileNewName";
+                        $sql3 = "INSERT INTO posts (user_id, post_content, upload_image, post_date, likes) VALUES (?, ?, ?, ?, ?);";
+                        $stmt3 = mysqli_prepare($conn, $sql3);
+                        mysqli_stmt_bind_param($stmt3, "ssssi", $user_id, $content, $fileNewName, $date, $likes);
+                        mysqli_stmt_execute($stmt3);
+                        $error = mysqli_stmt_error($stmt3);
+                        if(!$error){
                             success("Post created");
+                            move_uploaded_file($fileTmpName, $fileDestination);
                             $sql = "UPDATE users SET posts='yes' WHERE id=?;";
                             $stmt = mysqli_prepare($conn, $sql);
                             mysqli_stmt_bind_param($stmt, "s", $user_id);
                             mysqli_stmt_execute($stmt);
                         } else {
-                            error('SQL error: '.mysqli_error($conn));
+                            error('SQL error: '.$error);
                         }
                     } else {
                         warning("The file is to big. Limit is 1MB!");

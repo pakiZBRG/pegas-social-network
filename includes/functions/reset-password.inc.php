@@ -17,7 +17,7 @@
             warning('Password do not match');
         } else {
             // Get email from token
-            $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=?;";
+            $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=?;";
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "s", $selector);
             mysqli_stmt_execute($stmt);
@@ -32,7 +32,7 @@
                 mysqli_stmt_execute($stmt);
     
                 // Delete reset password token
-                $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
+                $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?";
                 $stmt = mysqli_prepare($conn, $sql);
                 mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
                 mysqli_stmt_execute($stmt);

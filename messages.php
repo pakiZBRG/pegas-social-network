@@ -6,13 +6,17 @@
             <input type='hidden' value='<?php echo $_SESSION["userId"]; ?>' id='userId' />
             <?php
                 $userId = $_SESSION["userId"];
-                $sql = "SELECT follower FROM followers WHERE followed=?";
+                $sql = "SELECT * FROM followers WHERE followed=? OR follower=?";
                 $stmt = mysqli_prepare($conn, $sql);
-                mysqli_stmt_bind_param($stmt, "s", $userId);
+                mysqli_stmt_bind_param($stmt, "ss", $userId, $userId);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 while($row = mysqli_fetch_assoc($result)) {
-                    $follower = $row["follower"];
+                    if($userId != $row["follower"]) {
+                        $user = $row["follower"];
+                    } else if($userId != $row["followed"]) {
+                        $user = $row["followed"];
+                    }
 
                     $user = "SELECT * FROM users WHERE id=$follower";
                     $stmt_u = mysqli_prepare($conn, $user);
