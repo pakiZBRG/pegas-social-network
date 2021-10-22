@@ -58,6 +58,7 @@ function logIn() {
 }
 
 function forgotPassword() {
+    console.log('asd')
     var email = $('#email').val();
     var forgotPassword = 'reset-request-submit';
 
