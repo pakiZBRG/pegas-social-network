@@ -92,6 +92,10 @@ input[type='file']{
     margin: 1rem;
     border: 1px solid #111;
 
+    & h2 {
+        font-family: "Fredericka the Great";
+    }
+
     & span {
         font-size: 1rem;
         color: #444;

@@ -58,13 +58,12 @@ function logIn() {
 }
 
 function forgotPassword() {
-    console.log('asd')
     var email = $('#email').val();
     var forgotPassword = 'reset-request-submit';
 
     $.ajax({
         method: "GET",
-        url: "/app/includes/functions/reset-request.inc.php",
+        url: "/includes/functions/reset-request.inc.php",
         data: {
             email,
             forgotPassword,

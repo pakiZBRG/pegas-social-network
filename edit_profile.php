@@ -20,7 +20,7 @@
 ?>
     <div class="row width-90 mx-auto">
         <div class='col-sm-12'>
-            <h1 class='text-center py-4'>Edit your profile</h1>
+            <h1 class='text-center py-4' style='font-family: "Fredericka the Great";'>Edit your profile</h1>
             <div id="message" class='mb-4'></div>
             <form class='editProfile mx-auto' method='POST' enctype='multipart/form-data'>
                 <input type="hidden" id="userId" value="<?php echo $user_id; ?>">
