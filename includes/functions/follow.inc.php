@@ -66,9 +66,6 @@
                     <span><i class='fa fa-check'></i> Following</span>
                     <small>unfollow</small>
                 </div>
-                <div class='send'>
-                    <span><i class='fa fa-envelope'></i> Messages</span>
-                </div>
             ";
         } else {
             error(mysqli_error($conn));

@@ -34,14 +34,14 @@
         mysqli_stmt_bind_param($stmt, "ii", $follower, $followed);
         mysqli_stmt_execute($stmt);
 
-        // Increment following for followed
+        // Decrement following for followed
         $following1 = (int) $following1 - 1;
         $update = "UPDATE users SET following=? WHERE id=?;";
         $stmt1 = mysqli_prepare($conn, $update);
         mysqli_stmt_bind_param($stmt1, "ii", $following1, $follower);
         mysqli_stmt_execute($stmt1);
 
-        // Increment followers for follower
+        // Decrement followers for follower
         $followers2 = (int) $followers2 - 1;
         $update2 = "UPDATE users SET followers=? WHERE id=?;";
         $stmt2 = mysqli_prepare($conn, $update2);

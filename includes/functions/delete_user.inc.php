@@ -44,9 +44,9 @@
             mysqli_stmt_execute($stmt_get);
             $result_get = mysqli_stmt_get_result($stmt_get);
             while($row_get = mysqli_fetch_assoc($result_get)) {
-                $following = $row_get["following"] - 1;
+                $followers = $row_get["followers"] - 1;
                 // Decremnt following for followed user
-                $update_foll = "UPDATE users SET following=$following WHERE id=$followed";
+                $update_foll = "UPDATE users SET followers=$followers WHERE id=$followed";
                 $stmt_upd = mysqli_prepare($conn, $update_foll);
                 mysqli_stmt_execute($stmt_upd);
             }
@@ -64,9 +64,9 @@
             mysqli_stmt_execute($stmt_get);
             $result_get = mysqli_stmt_get_result($stmt_get);
             while($row_get = mysqli_fetch_assoc($result_get)) {
-                $followers = $row_get["followers"] - 1;
+                $following = $row_get["following"] - 1;
                 // Decremnt following for followed user
-                $update_foll = "UPDATE users SET followers=$followers WHERE id=$follower";
+                $update_foll = "UPDATE users SET following=$following WHERE id=$follower";
                 $stmt_upd = mysqli_prepare($conn, $update_foll);
                 mysqli_stmt_execute($stmt_upd);
             }
