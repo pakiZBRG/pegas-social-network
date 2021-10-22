@@ -22,7 +22,7 @@
 
     <div class="row width-90 mx-auto">
         <div class='col-sm-12'>
-            <h1 class='my-4 text-center'>Edit Post</h1>
+            <h1 class='my-4 text-center' style='font-family: "Fredericka the Great";'>Edit Post</h1>
             <div id="message" class='mb-3'></div>
             <form method='POST' enctype='multipart/form-data' id='updatePost' class='edit-form mx-auto'>
                 <div class='form_control'>

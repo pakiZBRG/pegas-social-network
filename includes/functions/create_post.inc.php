@@ -55,8 +55,8 @@
                 if($fileError === 0){
                     if($fileSize < 1000000){
 
-                        $fileNewName = 'assets/'.$name."-".time().".".$fileAcutalExt;
-                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . $fileNewName;
+                        $fileNewName = $name."-".time().".".$fileAcutalExt;
+                        $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/assets/$fileNewName";
                         move_uploaded_file($fileTmpName, $fileDestination);
                         $sql = "INSERT INTO posts (user_id, post_content, upload_image, post_date) VALUES (?, ?, ?, ?);";
                         $stmt = mysqli_prepare($conn, $sql);
