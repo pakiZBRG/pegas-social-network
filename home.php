@@ -1,8 +1,8 @@
-<?php require '/includes/header.php' ?>
-<?php require '/includes/nav.php' ?>
+<?php require '/app/includes/header.php' ?>
+<?php require '/app/includes/nav.php' ?>
 <?php
 
-    require '/includes/googleButton.php';
+    require '/app/includes/googleButton.php';
     if(isset($_GET["code"])) {
         $email = $google_info->email;
         $_SESSION["userEmail"] = $email;
@@ -40,11 +40,11 @@
         <div class="col-md-11 col-sm-12 mx-auto">
             <h1 class='home-feed'>News Feed</h1>
             <div class='row width-80' id='all-feeds'>
-                <?php require '/includes/functions/get_posts.inc.php' ?>
+                <?php require '/app/includes/functions/get_posts.inc.php' ?>
             </div>
         </div>
     </div>
     <script>
         textLimit('#post', 500, "#postBtn");
     </script>
-<?php require '/includes/footer.php' ?>
+<?php require '/app/includes/footer.php' ?>

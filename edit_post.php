@@ -1,7 +1,7 @@
 <?php
-    require '/includes/header.php';
-    require '/includes/nav.php';
-    require '/includes/db.inc.php';
+    require '/app/includes/header.php';
+    require '/app/includes/nav.php';
+    require '/app/includes/db.inc.php';
 
     if(isset($_GET)) {
         $postId = mysqli_real_escape_string($conn, $_GET["post_id"]);
@@ -64,4 +64,4 @@
         textLimit('#content', 500, '#editPost');
     </script>
 
-<?php require '/includes/footer.php';?>
+<?php require '/app/includes/footer.php';?>
