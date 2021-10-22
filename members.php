@@ -1,5 +1,5 @@
-<?php include './includes/header.php' ?>
-<?php include './includes/nav.php' ?>
+<?php require '/includes/header.php' ?>
+<?php require '/includes/nav.php' ?>
     <div class="row width-80 pb-4">
         <div class="col-sm-12">
             <h2 class='text-center p-4 font-weight-bold' style='font-family: "Fredericka The Great";'>Connect with people, or bots</h2>
@@ -8,7 +8,7 @@
             </form>
         </div>
         <div class="col-sm-12" id="members">
-            <?php include "./includes/functions/search_user.inc.php" ?>
+            <?php require '/includes/functions/search_user.inc.php' ?>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php require '/includes/footer.php' ?>

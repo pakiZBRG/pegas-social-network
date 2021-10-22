@@ -3,7 +3,7 @@
     include "../helpers/Messages.php";
 
     if(isset($_POST["userId"])){
-        require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\db.inc.php";
+        require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
 
         $user_id = mysqli_real_escape_string($conn, $_POST["userId"]);
         $content = mysqli_real_escape_string($conn, $_POST["content"]);

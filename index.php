@@ -1,9 +1,9 @@
 <?php 
-    include './includes/header.php';
+    require '/includes/header.php';
 
     if(sizeof($_SESSION) != 0){
         if($_SESSION["userEmail"]) {
-            header("Location: /pegas/home");
+            header("Location: /home");
         }
     }
 ?>
@@ -28,9 +28,9 @@
                 <button onclick="logIn(); return false;" class="main-form-login" name='login'>
                     Login
                 </button>
-                <?php include "./includes/googleButton.php" ?>
+                <?php require '/includes/googleButton.php' ?>
                 <a class='main-form-signup' href='signup'>Create an account</a>
             </form>
         </div>
     </div>
-<?php include "./includes/footer.php" ?>
+<?php require '/includes/footer.php' ?>

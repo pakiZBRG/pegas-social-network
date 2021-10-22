@@ -29,20 +29,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Join my new social network in which you can connect with various people, post content and chat">
         <title>Pegas <?php echo $name ?></title>
-        <link rel='shortcut icon' href="/pegas/img/pegas.png">
-        <link rel='icon' href="/pegas/img/pegas.png">
-        <link rel='stylesheet' href='/pegas/style/style.css'>
+        <link rel='shortcut icon' href="/img/pegas.png">
+        <link rel='icon' href="/img/pegas.png">
+        <link rel='stylesheet' href='/style/style.css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
         <script src="https://use.fontawesome.com/3111f6741a.js"></script>
-        <script src="/pegas/js/ajax.js"></script>
-        <script src="/pegas/js/displayImg.js"></script>
-        <script src="/pegas/js/viewPostImg.js"></script>
-        <script src='/pegas/js/textLimit.js'></script>
-        <script src='/pegas/js/mobileNav.js'></script>
+        <script src="/js/ajax.js"></script>
+        <script src="/js/displayImg.js"></script>
+        <script src="/js/viewPostImg.js"></script>
+        <script src='/js/textLimit.js'></script>
+        <script src='/js/mobileNav.js'></script>
         <script>
             // Prevent resending forms on page refresh
             if ( window.history.replaceState ) {

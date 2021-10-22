@@ -1,6 +1,6 @@
-<?php include "./includes/header.php" ?>
-<?php include "./includes/nav.php" ?>
-<?php include "./includes/db.inc.php" ?>
+<?php require '/includes/header.php' ?>
+<?php require '/includes/nav.php' ?>
+<?php require '/includes/db.inc.php' ?>
     <div class="row" style='height: calc(100vh - 80px);'>
         <div class="col-lg-3 pr-0 follower">
             <input type='hidden' value='<?php echo $_SESSION["userId"]; ?>' id='userId' />
@@ -31,7 +31,7 @@
 
                         echo "
                             <div class='follower-card' onclick='loadMessagesAndUser($user_id, $loggedUser);'>
-                                <img src='/pegas/$profile_img' alt='$first_name $last_name'>
+                                <img src='/$profile_img' alt='$first_name $last_name'>
                                 <p>$first_name $last_name</p>
                             </div>
                         ";
@@ -56,4 +56,4 @@
             </div>
         </div>
     </div>
-<?php include "./includes/footer.php" ?>
+<?php require '/includes/footer.php' ?>

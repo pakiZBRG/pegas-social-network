@@ -1,5 +1,5 @@
-<?php include "./includes/header.php"; ?>
-<?php include "./includes/nav.php"; ?>
+<?php require '/includes/header.php'; ?>
+<?php require '/includes/nav.php'; ?>
 
 <main class='not-found'>
     <div class='not-found__center'>
@@ -8,4 +8,4 @@
     </div>
 </main>
 
-<?php include "./includes/footer.php"; ?>
+<?php require '/includes/footer.php'; ?>

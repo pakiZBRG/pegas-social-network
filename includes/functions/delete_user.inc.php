@@ -15,7 +15,7 @@
         while($row = mysqli_fetch_assoc($img_result)) {
             $filename = $row["upload_image"];
             if($filename) {
-                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                 if (file_exists($deleteimg)) {
                     unlink($deleteimg);
                 }
@@ -108,7 +108,7 @@
         if($row = mysqli_fetch_assoc($img_result)) {
             $filename = $row["profile_image"];
             if($filename != 'img/user.jpg') {
-                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                 if (file_exists($deleteimg)) {
                     unlink($deleteimg);
                 }
@@ -121,7 +121,7 @@
         if($row = mysqli_fetch_assoc($img_result)) {
             $filename = $row["cover_image"];
             if($filename != 'img/default.jpg') {
-                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                 if (file_exists($deleteimg)) {
                     unlink($deleteimg);
                 }
@@ -137,7 +137,7 @@
         session_unset();
         session_destroy();
 
-        header("Location: /pegas");
+        header("Location: /");
     }
 
 ?>

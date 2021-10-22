@@ -1,7 +1,7 @@
 <?php
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\db.inc.php";
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\helpers\Messages.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/helpers/Messages.php";
     
     if(isset($_GET["post_id"])){
         $postId = mysqli_real_escape_string($conn, $_GET["post_id"]);
@@ -63,16 +63,16 @@
                     <div class='row width-60'>
                         <div class='home-card'>
                             <div class='home-card-flex'>
-                                <a href='/pegas/profile/$user_name' title='$first_name $last_name'>
-                                    <img class='home-card-profile' src='/pegas/$profile_img' alt='$user_name'>
+                                <a href='/profile/$user_name' title='$first_name $last_name'>
+                                    <img class='home-card-profile' src='/$profile_img' alt='$user_name'>
                                 </a>
                                 <div class='home-card-flex-user'>
-                                    <h5><a href='/pegas/profile/$user_name' title='$first_name $last_name'>$user_name</a></h5>
+                                    <h5><a href='/profile/$user_name' title='$first_name $last_name'>$user_name</a></h5>
                                     <h6><small>$formatDate</small></h6>
                                 </div>
                             </div>
                             <p class='home-card-content'>$content</p>
-                            <img class='home-card-full' id='myImg' src='/pegas/$img' alt=''>
+                            <img class='home-card-full' id='myImg' src='/$img' alt=''>
                             <div id='myModal' class='modal'>
                                 <img class='modal-content' id='imgModal'>
                             </div>

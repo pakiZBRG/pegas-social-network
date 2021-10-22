@@ -1,7 +1,7 @@
 <?php
-    include "./includes/header.php";
-    include "./includes/nav.php";
-    include './includes/db.inc.php';
+    require '/includes/header.php';
+    require '/includes/nav.php';
+    require '/includes/db.inc.php';
 
     if(isset($_GET)) {
         $postId = mysqli_real_escape_string($conn, $_GET["post_id"]);
@@ -51,7 +51,7 @@
                             <i class='fa fa-check'></i>
                         </button>
                     </span>
-                    <span class='card m-1' href='/pegas/profile/<?php echo $user_name; ?>'>
+                    <span class='card m-1' href='/profile/<?php echo $user_name; ?>'>
                         <button class='card-btn decline'>
                             <i class='fa fa-times'></i>
                         </button>
@@ -64,4 +64,4 @@
         textLimit('#content', 500, '#editPost');
     </script>
 
-<?php include "./includes/footer.php";?>
+<?php require '/includes/footer.php';?>

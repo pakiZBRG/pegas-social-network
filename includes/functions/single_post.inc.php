@@ -1,6 +1,6 @@
 <?php
 
-    require realpath($_SERVER["DOCUMENT_ROOT"]) . "\\pegas\\includes\db.inc.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
 
     if(array_key_exists("userEmail", $_GET)){
         $userEmail = mysqli_real_escape_string($conn, $_GET["userEmail"]);
@@ -92,7 +92,7 @@
         if($user_id == $userId) {
             $edit = "
                 <div class='home-card-icons'>
-                    <a href='/pegas/profile/$user_name/$post_id/edit'>
+                    <a href='/profile/$user_name/$post_id/edit'>
                         <button class='action edit'><i class='fa fa-pencil'></i>
                         </button>
                     <a>
@@ -109,21 +109,21 @@
             <div class='home-card'>
                 $edit
                 <div class='home-card-flex'>
-                    <a href='/pegas/profile/$user_name' title='$first_name $last_name'>
-                        <img class='home-card-profile' src='/pegas/$profile_image' alt='$user_name' width='100px' height='100px'>
+                    <a href='/profile/$user_name' title='$first_name $last_name'>
+                        <img class='home-card-profile' src='/$profile_image' alt='$user_name' width='100px' height='100px'>
                     </a>
                     <div class='home-card-flex-user'>
-                        <h5><a href='/pegas/profile/$user_name'>$user_name</a></h5>
+                        <h5><a href='/profile/$user_name'>$user_name</a></h5>
                         <h6><small>$formatDate</small></h6>
                     </div>
                 </div>
                 ".($content ? "<p class='home-card-content'>$content</p>" : null)."
-                ".($upload_img ? "<a href='/pegas/post/$user_name/$post_id'><img class='home-card-img' src='/pegas/$upload_img' alt=''></a>" : null)."
+                ".($upload_img ? "<a href='/post/$user_name/$post_id'><img class='home-card-img' src='/$upload_img' alt=''></a>" : null)."
                 <div class='home-card-footer'>
                     <div id='like$post_id' class='card'>
                         $btn
                     </div>
-                    <a class='card' href='/pegas/post/$user_name/$post_id' title='View comments'>
+                    <a class='card' href='/post/$user_name/$post_id' title='View comments'>
                         <button class='card-btn cmt'>
                             <i class='fa fa-comments'></i><span class='comNum'>$comNum</span>
                         </button>

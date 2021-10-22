@@ -1,4 +1,4 @@
-<?php include './includes/header.php' ?>
+<?php require '/includes/header.php' ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="logo">
@@ -16,7 +16,7 @@
                     <h2>Create an account</h2>
                 </div>
                 <div id="message">
-                    <?php include 'includes/functions/insert_user.inc.php' ?>
+                    <?php require '/includes/functions/insert_user.inc.php' ?>
                 </div>
                 <form method="POST" class='signup-form'>
                     <input type="text" id='first_name' placeholder="First Name">
@@ -28,9 +28,9 @@
                     <p>Minimum 8 characters.</p>
                     <input type="password" id='pwd_repeat' placeholder="Repeat Password">
                     <button onclick="insertUser(); return false;" class='signup-form-btn' name='signup'>Signup</button>
-                    <a class='signup-form-login' href='/pegas'>Already have an account?</a>
+                    <a class='signup-form-login' href='/'>Already have an account?</a>
                 </form>
             </div>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php require '/includes/footer.php' ?>

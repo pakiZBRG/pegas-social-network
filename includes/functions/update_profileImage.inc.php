@@ -29,7 +29,7 @@
                     if($row = mysqli_fetch_assoc($img_result)) {
                         $filename = $row["profile_image"];
                         if($filename != 'img/user.jpg') {   
-                            $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/$filename";
+                            $deleteimg = realpath($_SERVER["DOCUMENT_ROOT"]) . "/$filename";
                             if (file_exists($deleteimg)) {
                                 unlink($deleteimg);
                             }
@@ -37,12 +37,12 @@
                     }
 
                     $fileNewName = $name."-".time().".".$fileAcutalExt;
-                    $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/pegas/assets/$fileNewName";
+                    $fileDestination = realpath($_SERVER["DOCUMENT_ROOT"]) . "/assets/$fileNewName";
                     move_uploaded_file($fileTmpName, $fileDestination);
                     $sql = "UPDATE users SET profile_image='assets/$fileNewName' WHERE id='$user_id';";
                     $run = mysqli_query($conn, $sql);
                     if($run) {
-                        echo "/pegas/assets/$fileNewName";
+                        echo "/assets/$fileNewName";
                     }
                 }
                 else {

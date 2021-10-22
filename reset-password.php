@@ -1,5 +1,5 @@
 <?php
-    require "./includes/db.inc.php";
+    require "/includes/db.inc.php";
     
     $selector = $_GET["selector"];
     $validator = explode("/", $_SERVER["REQUEST_URI"])[4];
@@ -13,21 +13,21 @@
     $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
     if(!$row) {
-        header("Location: /pegas/forgot-password/invalid");
+        header("Location: /forgot-password/invalid");
     } else if($row["pwdResetExpires"] < $currentDate){
         // Remove token if expired
-        header("Location: /pegas/forgot-password/invalid");
+        header("Location: /forgot-password/invalid");
         $sql = "DELETE FROM pwdreset WHERE pwdResetExpires < ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $currentDate);
         mysqli_stmt_execute($stmt);
     }
 ?>
-<?php include './includes/header.php' ?>
+<?php include '/includes/header.php' ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="logo">
-                <img src="/pegas/img/pegas.png" alt="logo" class='logo-img'>
+                <img src="/img/pegas.png" alt="logo" class='logo-img'>
                 <h1 class='logo-name'>pegas</h1>
                 <h1 class='logo-name'>network</h1>
             </div>
@@ -47,8 +47,8 @@
                 <input type='password' id='pwd' placeholder='New password'>
                 <input type='password' id='pwd-repeat' placeholder='Repeat password'>
                 <button onclick='resetPassword(); return false;' name='reset-password-submit' class='main-form-login'>Reset password</button>
-                <a class='main-form-forgot' href="/pegas/forgot-password">Forgotten password?</a>
+                <a class='main-form-forgot' href="/forgot-password">Forgotten password?</a>
             </form>
         </div>
     </div>
-<?php include './includes/footer.php' ?>
+<?php include '/includes/footer.php' ?>

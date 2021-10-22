@@ -1,8 +1,8 @@
 <?php 
 
-    include './includes/header.php';
-    include './includes/nav.php';
-    include "./includes/db.inc.php";
+    require '/includes/header.php';
+    require '/includes/nav.php';
+    require '/includes/db.inc.php';
 
     $userName = $_GET["username"];
     $loggedUser = $_SESSION["userId"];
@@ -106,11 +106,11 @@
             <?php
                 echo "
                     <div class='cover'>
-                        <img id='cover' src='/pegas/$cover_image' alt='cover-img'>
+                        <img id='cover' src='/$cover_image' alt='cover-img'>
                         $changeCover
                     </div>
                     <div class='profile'>
-                        <img id='profile' src='/pegas/$profile_image' alt='profile-img' height='200px' width='200px'>
+                        <img id='profile' src='/$profile_image' alt='profile-img' height='200px' width='200px'>
                         $changeProfile
                     </div>
                 ";
@@ -140,9 +140,9 @@
                 </div>
                 <input type="hidden" id="userId" value="<?php echo $loggedUser; ?>">
                 <div id="feeds" class="row mx-auto" style='width: 100%'>
-                    <?php include "./includes/functions/single_post.inc.php" ?>
+                    <?php require '/includes/functions/single_post.inc.php' ?>
                 </div>
             </div>
         </div>
     </div>
-<?php include "./includes/footer.php" ?>
+<?php require '/includes/footer.php' ?>
