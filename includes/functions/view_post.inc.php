@@ -59,7 +59,7 @@
                         <div class='home-card'>
                             <div class='home-card-flex'>
                                 <a href='/profile/$user_name' title='$first_name $last_name'>
-                                    <img class='home-card-profile' src='/$profile_img' alt='$user_name'>
+                                    <img class='home-card-profile' src='/$profile_img' alt='profile'>
                                 </a>
                                 <div class='home-card-flex-user'>
                                     <h5><a href='/profile/$user_name' title='$first_name $last_name'>$user_name</a></h5>

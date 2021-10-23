@@ -61,8 +61,12 @@
                         <img class='home-card-profile' src='/$user_img' alt='profile'>
                     </a>
                     <div class='home-card-flex-user' id='tooltipPlace$post_id'>
-                        <h5><a onmouseenter='displayTooltip($user_id, $post_id);' onmouseleave='removeTooltip($post_id);' href='/profile/$user_name' title='$first_name $last_name'>$user_name</a></h4>
-                        <h6><small>$formatDate</small></h5>
+                        <h5>
+                            <a onmouseover='displayTooltip($user_id, $post_id);' onmouseout='removeTooltip($post_id);' href='/pegas/profile/$user_name'>$user_name</a>
+                        </h5>
+                        <h6>
+                            <small>$formatDate</small>
+                        </h6>
                     </div>
                     <input type='hidden' id='postId' value='$post_id'>
                 </div>

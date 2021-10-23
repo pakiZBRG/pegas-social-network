@@ -90,7 +90,7 @@
                 $edit
                 <div class='home-card-flex'>
                     <a href='/profile/$user_name' title='$first_name $last_name'>
-                        <img class='home-card-profile' src='/$profile_image' alt='$user_name' width='100px' height='100px'>
+                        <img class='home-card-profile' src='/$profile_image' alt='profile' width='100px' height='100px'>
                     </a>
                     <div class='home-card-flex-user'>
                         <h5><a href='/profile/$user_name'>$user_name</a></h5>
