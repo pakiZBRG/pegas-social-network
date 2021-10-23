@@ -137,8 +137,10 @@ $(document).ready(function(){
     });
 })
 
-function getPostsAfterPostCreation(limit, start) {
+function getPostsAfterPostCreation() {
     var userId = $('#userId').val();
+    var limit = 5;
+    var start = 0;
 
     $.ajax({
         method: "GET",
@@ -391,25 +393,6 @@ function deletePost(postId, userEmail, userId) {
     });
 }
 
-function searchPost(userId) {
-    var search = $('#searchPost').val();
-
-    $.ajax({
-        url: "/includes/functions/single_post.inc.php",
-        type: "GET",
-        data: {
-            search,
-            userId
-        },
-        success: function(data) {
-            $('#all-feeds').html(data);
-        },
-        error: function(e) {
-            console.log(e)
-        }          
-    });
-}
-
 function loadMessagesAndUser(userId, loggedUser) {
     $.ajax({
         url: "/includes/functions/messages.inc.php",
@@ -502,7 +485,7 @@ $(document).ready(function () {
                 $('#postForm')[0].reset();
                 $('#showImg')[0].src = '';
                 $('#showImg').css({'height': '0'});
-                getPostsAfterPostCreation(limit, start);
+                getPostsAfterPostCreation();
             },
             error: function(e) {
                 console.log(e)

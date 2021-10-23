@@ -1,22 +1,18 @@
 <?php
 
-    // liking system
-    $like_sql = "SELECT * FROM likes WHERE post_id=?";
-    $stmt_l = mysqli_prepare($conn, $like_sql);
-    mysqli_stmt_bind_param($stmt_l, "s", $post_id);
-    mysqli_stmt_execute($stmt_l);
-    $result_l = mysqli_stmt_get_result($stmt_l);
-    if($row_l = mysqli_fetch_array($result_l)){
-        $likedUser = $row_l["user_id"];
-        $likedPost = $row_l["post_id"];
+    if(isset($_SESSION)){
+        $userId = $_SESSION["userId"];
     } else {
-        $likedUser = '';
-        $likedPost = '';
+        $userId = $_GET["userId"];
     }
-
     $likes = number_format((int) $likes, 0, '.', ',');
-    
-    // If the post is like by logged User and what post    
+    $like_sql = "SELECT * FROM likes WHERE post_id=? AND user_id=?";
+    $stmt_l = mysqli_prepare($conn, $like_sql);
+    mysqli_stmt_bind_param($stmt_l, "ss", $post_id, $userId);
+    mysqli_stmt_execute($stmt_l);
+    mysqli_stmt_store_result($stmt_l);
+    // if 1 it is liked by logger user, 0 is not liked
+    $isLiked = mysqli_stmt_num_rows($stmt_l);
     if($loggedUser == $user_id) {
         if($likes == 1) {
             $text = "Like";
@@ -29,7 +25,7 @@
                 <span style='font-size: .8rem'>$text</span>
             </button>
         ";
-    } else if($likedPost == $post_id) {
+    } else if($isLiked) {
         $btn = "
             <button class='card-btn like' id='liked' onclick='dislikePost($post_id)'>
                 <div id='$post_id'></div>

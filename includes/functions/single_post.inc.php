@@ -2,31 +2,11 @@
 
     require realpath($_SERVER["DOCUMENT_ROOT"]) . "/includes/db.inc.php";
 
-    if(array_key_exists("userEmail", $_GET)){
-        $userEmail = mysqli_real_escape_string($conn, $_GET["userEmail"]);
-        $sql = "SELECT * FROM users WHERE email=? ORDER BY id DESC;";
+    if(array_key_exists("username", $_GET)){
+        $username = mysqli_real_escape_string($conn, $_GET["username"]);
+        $sql = "SELECT * FROM users WHERE username=? ORDER BY id DESC;";
         $stmt_a = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt_a, "s", $userEmail);
-        mysqli_stmt_execute($stmt_a);
-        $result = mysqli_stmt_get_result($stmt_a);
-        if($row = mysqli_fetch_assoc($result)) {
-            $userId = $row["id"];
-            $sql = "SELECT * FROM posts WHERE user_id=? ORDER BY id DESC;";
-            $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "s", $userId);
-        }
-    } else if(array_key_exists("search", $_GET)){
-        $userEmail = '';
-        $search = mysqli_real_escape_string($conn, $_GET["search"]);
-        $search = "$search%";
-
-        $sql = "SELECT * FROM posts WHERE post_content LIKE ? ORDER BY id DESC;";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "s", $search);
-    } else {
-        $sql = "SELECT * FROM users WHERE email=? ORDER BY id DESC;";
-        $stmt_a = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt_a, "s", $userEmail);
+        mysqli_stmt_bind_param($stmt_a, "s", $username);
         mysqli_stmt_execute($stmt_a);
         $result = mysqli_stmt_get_result($stmt_a);
         if($row = mysqli_fetch_assoc($result)) {

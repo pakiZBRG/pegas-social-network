@@ -39,11 +39,6 @@
                 $first_name = $row["first_name"];
                 $last_name = $row["last_name"];
                 $username = $_SESSION["userName"];
-                if(isset($_SESSION)){
-                    $userId = $_SESSION["userId"];
-                } else {
-                    $userId = $_GET["userId"];
-                }
 
                 // Get the total number of comments
                 $query = "SELECT COUNT(*) AS SUM FROM comments WHERE post_id=$post_id";
